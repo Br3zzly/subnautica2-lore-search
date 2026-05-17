@@ -1,6 +1,6 @@
 #requires -Version 5.1
-# Reads FModel-exported entry JSONs and produces site/databank.json + copies
-# referenced textures into site/images/.
+# Reads FModel-exported entry JSONs and produces docs/databank.json + copies
+# referenced textures into docs/images/.
 #
 # All inputs live OUTSIDE the repo:
 #   -FModelContent <path>  Required. FModel's <Output>/Exports/Subnautica2/Content
@@ -32,13 +32,13 @@ if (-not (Test-Path $srcRoot)) {
 }
 
 $repoRoot   = Split-Path -Parent $PSScriptRoot
-$siteDir    = Join-Path $repoRoot 'site'
-$outFile    = Join-Path $siteDir  'databank.json'
-$imagesDir  = Join-Path $siteDir  'images'
-$missingTxt = Join-Path $siteDir  'missing_images.txt'
+$docsDir    = Join-Path $repoRoot 'docs'
+$outFile    = Join-Path $docsDir  'databank.json'
+$imagesDir  = Join-Path $docsDir  'images'
+$missingTxt = Join-Path $docsDir  'missing_images.txt'
 
-if (-not (Test-Path $siteDir)) {
-    New-Item -ItemType Directory -Path $siteDir | Out-Null
+if (-not (Test-Path $docsDir)) {
+    New-Item -ItemType Directory -Path $docsDir | Out-Null
 }
 
 # Try to read the game build from <GameRoot>/version.json (best-effort)
@@ -114,7 +114,7 @@ foreach ($f in $files) {
     # Immediate parent folder, used to disambiguate ID collisions below.
     $parentFolder = if ($parts.Count -gt 1) { $parts[$parts.Count - 2] } else { '' }
 
-    # EntryImage.AssetPathName → relative texture path (.png) under site/images/.
+    # EntryImage.AssetPathName → relative texture path (.png) under docs/images/.
     $imageRel = $null
     if ($p.PSObject.Properties['EntryImage'] -and $p.EntryImage -and
         $p.EntryImage.PSObject.Properties['AssetPathName']) {
@@ -145,7 +145,7 @@ foreach ($e in $entries) {
 }
 
 # --- Image handling ---------------------------------------------------------
-# Copy referenced textures from FModel's export tree into site/images/, and
+# Copy referenced textures from FModel's export tree into docs/images/, and
 # emit a list of any that aren't present so the user knows what to export next.
 
 if (-not (Test-Path $imagesDir)) {

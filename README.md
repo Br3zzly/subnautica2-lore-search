@@ -9,13 +9,13 @@ redistributed — only the structured text data the player sees in-game.
 ## Cheat sheet
 
 ```powershell
-# Rebuild databank.json + copy referenced textures into site/images/
+# Rebuild databank.json + copy referenced textures into docs/images/
 ./scripts/build_data.ps1 `
     -FModelContent "<FModel Output Dir>\Exports\Subnautica2\Content" `
     -GameRoot      "C:\Program Files (x86)\Steam\steamapps\common\Subnautica 2"
 
 # Serve the site locally (then open http://localhost:8000)
-python -m http.server 8000 --directory site
+python -m http.server 8000 --directory docs
 ```
 
 - `-FModelContent` is required — that's where the entry JSONs and texture
@@ -25,7 +25,7 @@ python -m http.server 8000 --directory site
   "Build CL-…" stamp on the site. Omit it and the stamp is just blank.
 
 After running, build script prints counts so you can sanity-check; anything
-missing on the image side gets listed in `site/missing_images.txt`.
+missing on the image side gets listed in `docs/missing_images.txt`.
 
 ## Layout
 
@@ -34,8 +34,8 @@ missing on the image side gets listed in `site/missing_images.txt`.
 ├── .gitignore
 ├── README.md
 ├── scripts/
-│   └── build_data.ps1    # FModel exports → site/databank.json
-└── site/                 # What GitHub Pages serves
+│   └── build_data.ps1    # FModel exports → docs/databank.json
+└── docs/                 # What GitHub Pages serves
     ├── index.html
     ├── style.css
     ├── app.js
@@ -79,18 +79,18 @@ script reads them via the `-FModelContent` / `-GameRoot` arguments.
    | `Subnautica2/Content/Prototyping/Void/Textures/` → same | Axum / alien glyph placeholders |
 
 3. **Run the build script** (see [Cheat sheet](#cheat-sheet)). It reads the
-   entry JSONs and copies only the referenced textures into `site/images/`.
+   entry JSONs and copies only the referenced textures into `docs/images/`.
 
 4. **(optional) Preview locally** before pushing:
 
    ```powershell
-   python -m http.server 8000 --directory site
+   python -m http.server 8000 --directory docs
    ```
 
    Then open <http://localhost:8000>. Stop the server with `Ctrl+C`.
 
-5. **Commit and push.** GitHub Pages picks up `site/databank.json` and
-   `site/images/` automatically — the site is plain HTML/JS, no build step.
+5. **Commit and push.** GitHub Pages picks up `docs/databank.json` and
+   `docs/images/` automatically — the site is plain HTML/JS, no build step.
 
 That's the full loop. New logs, renamed entries, new art — all flow through.
 
@@ -103,7 +103,7 @@ That's the full loop. New logs, renamed entries, new art — all flow through.
   `Singh` investigations), the script appends the parent folder to the ID so
   they remain individually addressable.
 - **Images.** `EntryImage.AssetPathName` is translated to a relative PNG
-  path under `site/images/`. The build script copies only the images
+  path under `docs/images/`. The build script copies only the images
   referenced by some entry — the rest of the FModel export tree is left
   alone. Entries whose referenced image isn't on disk render text-only.
 
@@ -112,12 +112,9 @@ That's the full loop. New logs, renamed entries, new art — all flow through.
 1. Push this repo to GitHub.
 2. Repo → **Settings → Pages**.
 3. *Source*: **Deploy from a branch**.
-4. *Branch*: `main` (or whatever you push to), **/ folder**: `/site`.
+4. *Branch*: `main` (or whatever you push to), **/ folder**: `/docs`.
 5. Save. First deploy takes a minute or two; your site appears at
    `https://<your-username>.github.io/<repo-name>/`.
-
-If GitHub Pages only offers `/` and `/docs`, rename `site/` to `docs/` and
-update `scripts/build_data.ps1` accordingly (one line — `$siteDir`).
 
 ## How the search works
 

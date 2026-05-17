@@ -433,7 +433,7 @@
                 els.meta.textContent =
                     `Failed to load databank.json: ${err.message}. ` +
                     `If you're opening index.html directly via file://, ` +
-                    `run a local server instead (e.g. \`python -m http.server 8000 --directory site\`).`;
+                    `run a local server instead (e.g. \`python -m http.server 8000 --directory docs\`).`;
             } else {
                 console.error(err);
                 els.meta.textContent =
