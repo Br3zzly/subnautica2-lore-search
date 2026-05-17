@@ -26,9 +26,12 @@ $ErrorActionPreference = 'Stop'
 if (-not (Test-Path $FModelContent)) {
     throw "FModelContent path does not exist: $FModelContent"
 }
-$srcRoot = Join-Path $FModelContent 'Data\DatabankEntry'
-if (-not (Test-Path $srcRoot)) {
-    throw "Data\DatabankEntry not found under FModelContent. Expected: $srcRoot"
+# Canonical "released" entries live here. Everything else with Type ==
+# UWEDatabankEntry found elsewhere in Content is treated as a prototype and
+# grouped under a synthetic top-level "Prototypes" category.
+$releasedRoot = Join-Path $FModelContent 'Data\DatabankEntry'
+if (-not (Test-Path $releasedRoot)) {
+    throw "Data\DatabankEntry not found under FModelContent. Expected: $releasedRoot"
 }
 
 $repoRoot   = Split-Path -Parent $PSScriptRoot
@@ -53,7 +56,7 @@ if ($GameRoot) {
             $v = $raw | ConvertFrom-Json
             if ($v.changelist) { $gameBuild = "CL-$($v.changelist)" }
         } catch {
-            Write-Warning "Could not parse $versionJson: $_"
+            Write-Warning "Could not parse ${versionJson}: $_"
         }
     } else {
         Write-Warning "version.json not found under GameRoot ($versionJson). Skipping CL stamp."
@@ -79,10 +82,21 @@ function Get-Text($field) {
 }
 
 $entries = New-Object System.Collections.Generic.List[object]
-$files = Get-ChildItem -Path $srcRoot -Recurse -Filter *.json
+# Walk the whole Content tree. Most JSONs (UI, Materials, Blueprints, etc.)
+# aren't databank entries, so do a cheap substring check on the raw text
+# before paying for ConvertFrom-Json.
+$files = Get-ChildItem -Path $FModelContent -Recurse -Filter *.json -File
 foreach ($f in $files) {
     try {
-        $json = Get-Content -LiteralPath $f.FullName -Raw -Encoding UTF8 | ConvertFrom-Json
+        $raw = [System.IO.File]::ReadAllText($f.FullName)
+    } catch {
+        Write-Warning "Failed to read $($f.FullName): $_"
+        continue
+    }
+    if (-not $raw.Contains('UWEDatabankEntry')) { continue }
+
+    try {
+        $json = $raw | ConvertFrom-Json
     } catch {
         Write-Warning "Failed to parse $($f.FullName): $_"
         continue
@@ -102,7 +116,19 @@ foreach ($f in $files) {
         }
     }
 
-    $rel = $f.FullName.Substring($srcRoot.Length).TrimStart('\','/')
+    # Released entries live under Data\DatabankEntry; everything else is a
+    # prototype and gets a synthetic "Prototypes" root category prepended so
+    # it lands in its own top-level tree branch.
+    $isPrototype = -not $f.FullName.StartsWith($releasedRoot, [System.StringComparison]::OrdinalIgnoreCase)
+    if ($isPrototype) {
+        $cats = @('Prototypes (DEV/WIP Content - not ingame)') + $cats
+        $rel = $f.FullName.Substring($FModelContent.Length).TrimStart('\','/')
+    } else {
+        # Released entries with no Categories[] land in a synthetic "Uncategorized"
+        # root so they aren't rendered as bare leaves at the tree root.
+        if ($cats.Count -eq 0) { $cats = @('Uncategorized') }
+        $rel = $f.FullName.Substring($releasedRoot.Length).TrimStart('\','/')
+    }
     $parts = $rel -split '[\\/]'
     # Strip the filename; everything before it is the section path. Join with
     # forward slashes for cross-platform display. Top-level files get "General".
@@ -111,6 +137,7 @@ foreach ($f in $files) {
     } else {
         $subfolder = 'General'
     }
+    if ($isPrototype) { $subfolder = "Prototypes/$subfolder" }
     # Immediate parent folder, used to disambiguate ID collisions below.
     $parentFolder = if ($parts.Count -gt 1) { $parts[$parts.Count - 2] } else { '' }
 

@@ -1,7 +1,7 @@
 {
-    "generated_at":  "2026-05-17T14:43:23Z",
-    "game_build":  "CL-113109",
-    "total":  505,
+    "generated_at":  "2026-05-17T18:54:56Z",
+    "game_build":  null,
+    "total":  555,
     "entries":  [
                     {
                         "id":  "DA_Adaptations_Digestion_DatabankEntry",
@@ -38,7 +38,7 @@
                         "subfolder":  "Architecture",
                         "title":  "[PLACEHOLDER] Thermal Generator",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "[PLACEHOLDER] Its power source is broken but it could be hooked back up again. And now you can build it too!",
                         "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
@@ -48,7 +48,7 @@
                         "subfolder":  "Architecture",
                         "title":  "Axum Crypter Terminal",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "[PLACEHOLDER] The computer is active despite an obvious lack of use. It will take some time to decipher the message, but it appears to be imploring for assistance in locating \"misplaced trinkets\" and wants us to place them in the nearby storage.",
                         "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
@@ -68,13 +68,23 @@
                         "subfolder":  "Architecture",
                         "title":  "Relief Map",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "[PLACEHOLDER] Wow! Cool relief map!",
                         "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
                     },
                     {
                         "id":  "DA_AxumWriting_TailingsGraffiti_ShipChunk7_Dream4_DatabankEntry",
+                        "subfolder":  "Architecture",
+                        "title":  "Unknown Symbol (Cable Cave)",
+                        "categories":  [
+                                           "Unknown"
+                                       ],
+                        "body":  "Unknown etchings with possible semiotic content.",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_AxumWriting_TailingsGraffiti_ShipChunk7_Dream3_DatabankEntry",
                         "subfolder":  "Architecture",
                         "title":  "Unknown Symbol (Cable Cave)",
                         "categories":  [
@@ -95,16 +105,6 @@
                     },
                     {
                         "id":  "DA_AxumWriting_TailingsGraffiti_ShipChunk7_Dream2_DatabankEntry",
-                        "subfolder":  "Architecture",
-                        "title":  "Unknown Symbol (Cable Cave)",
-                        "categories":  [
-                                           "Unknown"
-                                       ],
-                        "body":  "Unknown etchings with possible semiotic content.",
-                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
-                    },
-                    {
-                        "id":  "DA_AxumWriting_TailingsGraffiti_ShipChunk7_Dream3_DatabankEntry",
                         "subfolder":  "Architecture",
                         "title":  "Unknown Symbol (Cable Cave)",
                         "categories":  [
@@ -138,7 +138,7 @@
                         "subfolder":  "Axum",
                         "title":  "[PLACEHOLDER] Cymatic Pool",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "[PLACEHOLDER] A pool of liquid metal. If you\u0027re tired of swimming in good old boring waters, you know what to do here.",
                         "image_url":  "images/Prototyping/Void/Textures/T_AlienFace.png"
@@ -765,6 +765,17 @@
                         "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
                     },
                     {
+                        "id":  "DA_CoralGardens_BlackBox_Chap_02_DatabankEntry",
+                        "subfolder":  "CoralGardens",
+                        "title":  "Chap",
+                        "categories":  [
+                                           "Data Downloads",
+                                           "Black Boxes"
+                                       ],
+                        "body":  "Blackbox:  Sovann, Chap \"Chap\" 02\n\nPOSTMORTEM\n\nChap died in an explosion.\n\nSeveral other colonists were killed in the same blast.\n\nChap died about 235,000 hours ago.\n\nChap’s blackbox had been marked Do Not Print shortly before his death. This status was applied by the Habitat NoA node.\nThis fork of Chap\u0027s life ended.\n\nThe kurultai-level access codes in this blackbox were corrupted by the explosion and cannot be retrieved.",
+                        "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
+                    },
+                    {
                         "id":  "DA_CoralGardens_BlackBox_Chap_01_DatabankEntry",
                         "subfolder":  "CoralGardens",
                         "title":  "Chap",
@@ -783,17 +794,6 @@
                                            "Colonists"
                                        ],
                         "body":  "Chap Sovann\n\nGender: M\n\nMission role: Computational dynamicist, biobed administrator\n\nPay rate: Kurul [expired Mongolian Free States trademark for member of a leadership council]\n\nBiography: Fast-tracked from Alterra educational cadre to work on breakthrough human fabrication technologies. Volunteered for Cicada mission to test biobed systems in harsh frontier environment.\n\nNotes: A loyal and consistent performer since infancy. Minimal risk of breakdown. Some professional tension with AI ethicist Lucretia Kapoor.",
-                        "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
-                    },
-                    {
-                        "id":  "DA_CoralGardens_BlackBox_Chap_02_DatabankEntry",
-                        "subfolder":  "CoralGardens",
-                        "title":  "Chap",
-                        "categories":  [
-                                           "Data Downloads",
-                                           "Black Boxes"
-                                       ],
-                        "body":  "Blackbox:  Sovann, Chap \"Chap\" 02\n\nPOSTMORTEM\n\nChap died in an explosion.\n\nSeveral other colonists were killed in the same blast.\n\nChap died about 235,000 hours ago.\n\nChap’s blackbox had been marked Do Not Print shortly before his death. This status was applied by the Habitat NoA node.\nThis fork of Chap\u0027s life ended.\n\nThe kurultai-level access codes in this blackbox were corrupted by the explosion and cannot be retrieved.",
                         "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
                     },
                     {
@@ -827,16 +827,6 @@
                         "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
                     },
                     {
-                        "id":  "DA_CoralGardens_BlackBox_Bio_Ganz_DatabankEntry",
-                        "subfolder":  "CoralGardens",
-                        "title":  "Ganzo",
-                        "categories":  [
-                                           "Colonists"
-                                       ],
-                        "body":  "S. \"Ganzo\" Ganzorig\n\nGender: M\n\nMission role: Sensor operator\n\nPay rate: Bagatur [hero, knight; expired Mongolian Free States trademark for a specialized/valuable worker]\n\nBiography: Husband of T. \"Ruby\" Anar. Born in Mongolian Independent States. Highly creative and unorthodox multispectral sensor specialist. Unable to pass most Alterra technical qualifications, but consistently performant in the field.\n\nNotes: Work performance highly correlated to safety of his spouse. May suffer psychological trauma if forced to repeatedly monitor her death.",
-                        "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
-                    },
-                    {
                         "id":  "DA_CoralGardens_BlackBox_Ganz_01_DatabankEntry",
                         "subfolder":  "CoralGardens",
                         "title":  "Ganzo",
@@ -845,6 +835,16 @@
                                            "Black Boxes"
                                        ],
                         "body":  "Blackbox: S. \"Ganzo\" Ganzorig 01\n\nPOSTMORTEM\n\nGanzo died of asphyxiation. He entered a trance state and removed his breathing equipment. Ganzo had severe viremia.\n\nGanzo died alongside eight other pioneers.\n\nGanzo died about 235,000 hours ago.\n\nGanzo\u0027s blackbox transmitted him to a biobed in a nearby base camp. During his reprint, extreme levels of retroviral contamination and irreversible behavioral abnormalities were detected in his brain. All other pioneers in this cluster were marked ‘do not print’ and scheduled for reset.\n\nGanzo\u0027s life continued.",
+                        "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
+                    },
+                    {
+                        "id":  "DA_CoralGardens_BlackBox_Bio_Ganz_DatabankEntry",
+                        "subfolder":  "CoralGardens",
+                        "title":  "Ganzo",
+                        "categories":  [
+                                           "Colonists"
+                                       ],
+                        "body":  "S. \"Ganzo\" Ganzorig\n\nGender: M\n\nMission role: Sensor operator\n\nPay rate: Bagatur [hero, knight; expired Mongolian Free States trademark for a specialized/valuable worker]\n\nBiography: Husband of T. \"Ruby\" Anar. Born in Mongolian Independent States. Highly creative and unorthodox multispectral sensor specialist. Unable to pass most Alterra technical qualifications, but consistently performant in the field.\n\nNotes: Work performance highly correlated to safety of his spouse. May suffer psychological trauma if forced to repeatedly monitor her death.",
                         "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
                     },
                     {
@@ -890,16 +890,6 @@
                         "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
                     },
                     {
-                        "id":  "DA_CoralGardens_BlackBox_Bio_Mogami_DatabankEntry",
-                        "subfolder":  "CoralGardens",
-                        "title":  "Mogami",
-                        "categories":  [
-                                           "Colonists"
-                                       ],
-                        "body":  "Mogami \"Mogami\" Kinu\n\nGender: F\n\nMission role: Fertility specialist\n\nPay rate: Bagatur [hero, knight; expired Mongolian Free States trademark for a specialized/valuable worker]\n\nBiography: Mother of Wander and Ander. Adopted Mongolian naming conventions for children. Achieved zero infant mortality on Mongolian one-way colony world New Tārā. Compassionate fatalist: accepts inevitability of suffering but still feels it. Critical social anchor in Habitat cohort.\n\nNotes: Despite large emotional attack surface, unlikely to depart from useful work regime.",
-                        "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
-                    },
-                    {
                         "id":  "DA_CoralGardens_BlackBox_Mogami_01_DatabankEntry",
                         "subfolder":  "CoralGardens",
                         "title":  "Mogami",
@@ -911,13 +901,13 @@
                         "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
                     },
                     {
-                        "id":  "DA_CoralGardens_BlackBox_Bio_Quaker_DatabankEntry",
+                        "id":  "DA_CoralGardens_BlackBox_Bio_Mogami_DatabankEntry",
                         "subfolder":  "CoralGardens",
-                        "title":  "Quaker",
+                        "title":  "Mogami",
                         "categories":  [
                                            "Colonists"
                                        ],
-                        "body":  "Lucretia \"Quaker\" Kapoor\n\nGender: F\n\nMission role: AI ethicist\n\nPay rate: Bagatur [hero, knight; expired Mongolian Free States trademark for a specialized/valuable worker]\n\nBiography: Member of the Society of Friends. Consulted on the ethics of one-way colony missions during the intervention against the Mongolian Independent States. Volunteered for Cicada colony mission in order to accompany and work for the welfare of Mongolian refugees.\n\nNotes: Self-reliant and calm. Prefers an observational and advisory role, though she displays signs of intense loneliness.",
+                        "body":  "Mogami \"Mogami\" Kinu\n\nGender: F\n\nMission role: Fertility specialist\n\nPay rate: Bagatur [hero, knight; expired Mongolian Free States trademark for a specialized/valuable worker]\n\nBiography: Mother of Wander and Ander. Adopted Mongolian naming conventions for children. Achieved zero infant mortality on Mongolian one-way colony world New Tārā. Compassionate fatalist: accepts inevitability of suffering but still feels it. Critical social anchor in Habitat cohort.\n\nNotes: Despite large emotional attack surface, unlikely to depart from useful work regime.",
                         "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
                     },
                     {
@@ -932,14 +922,13 @@
                         "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
                     },
                     {
-                        "id":  "DA_CoralGardens_BlackBox_Raster_01_DatabankEntry",
+                        "id":  "DA_CoralGardens_BlackBox_Bio_Quaker_DatabankEntry",
                         "subfolder":  "CoralGardens",
-                        "title":  "Raster",
+                        "title":  "Quaker",
                         "categories":  [
-                                           "Data Downloads",
-                                           "Black Boxes"
+                                           "Colonists"
                                        ],
-                        "body":  "Blackbox: Niauronyte, Rasa \"Raster\" 01\n\nPOSTMORTEM\n\nRaster died of asphyxiation. She entered a trance state and became unresponsive. Raster had severe viremia.\n\nRaster died alongside eight other pioneers.\n\nRaster died about 235,000 hours ago.\n\nRaster\u0027s blackbox transmitted her to a biobed in a nearby base camp. Due to extreme levels of retroviral contamination, Raster was marked ‘do not print’ and scheduled for reset from an earlier state.\n\nThis fork of Raster\u0027s life ended.",
+                        "body":  "Lucretia \"Quaker\" Kapoor\n\nGender: F\n\nMission role: AI ethicist\n\nPay rate: Bagatur [hero, knight; expired Mongolian Free States trademark for a specialized/valuable worker]\n\nBiography: Member of the Society of Friends. Consulted on the ethics of one-way colony missions during the intervention against the Mongolian Independent States. Volunteered for Cicada colony mission in order to accompany and work for the welfare of Mongolian refugees.\n\nNotes: Self-reliant and calm. Prefers an observational and advisory role, though she displays signs of intense loneliness.",
                         "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
                     },
                     {
@@ -950,6 +939,17 @@
                                            "Colonists"
                                        ],
                         "body":  "Rasa \"Raster\" Niauronyte\n\nGender: W\n\nMission role: Automation manager\n\nPay rate: Bagatur [hero, knight; expired Mongolian Free States trademark for a specialized/valuable worker]\n\nBiography: Manages MAC drones aboard AISV *Cicada*. Responsible for deploying automation on Zezura colony. Personality rendered alkaline by years of immersion in technology jargon and automation culture. Struggles to form friendships despite personal desire to reach out.\n\nNotes: May benefit from time outside. Namespace collision with Reset Applications for Survival Action protocol is a coincidence.",
+                        "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
+                    },
+                    {
+                        "id":  "DA_CoralGardens_BlackBox_Raster_01_DatabankEntry",
+                        "subfolder":  "CoralGardens",
+                        "title":  "Raster",
+                        "categories":  [
+                                           "Data Downloads",
+                                           "Black Boxes"
+                                       ],
+                        "body":  "Blackbox: Niauronyte, Rasa \"Raster\" 01\n\nPOSTMORTEM\n\nRaster died of asphyxiation. She entered a trance state and became unresponsive. Raster had severe viremia.\n\nRaster died alongside eight other pioneers.\n\nRaster died about 235,000 hours ago.\n\nRaster\u0027s blackbox transmitted her to a biobed in a nearby base camp. Due to extreme levels of retroviral contamination, Raster was marked ‘do not print’ and scheduled for reset from an earlier state.\n\nThis fork of Raster\u0027s life ended.",
                         "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
                     },
                     {
@@ -1133,6 +1133,16 @@
                         "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
                     },
                     {
+                        "id":  "DA_CoralGardens_BlackBox_Bio_Wu_DatabankEntry",
+                        "subfolder":  "CoralGardens",
+                        "title":  "Wu",
+                        "categories":  [
+                                           "Colonists"
+                                       ],
+                        "body":  "吴量海 Wu \"Dr. Wu\" Lianghai\r\n\r\nGender: M\r\n\r\nMission role: Dietician\r\n\r\nPay rate: Kurul [expired Mongolian Free States trademark for member of a leadership council]\r\n\r\nBiography: Grandfather of large extended family mostly destroyed during collapse of Mongolian Independent States. Recruited Mogami Kinu as fertility engineer. Vital to mission success.\r\n\r\nNote: Extensive pharmacological experience makes Dr. Wu reliable even when psychologically altered",
+                        "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
+                    },
+                    {
                         "id":  "DA_CoralGardens_BlackBox_Wu_01_DatabankEntry",
                         "subfolder":  "CoralGardens",
                         "title":  "Wu",
@@ -1141,16 +1151,6 @@
                                            "Black Boxes"
                                        ],
                         "body":  "Blackbox: 吴量海 Wu \"Dr. Wu\" Lianghai 01\r\n\r\nPOSTMORTEM\r\n\r\nDr. Wu drowned after an explosion caused a fire in Habitat.\r\n\r\nDr. Wu was experiencing moderate starvation. Dr. Wu had moderate heavy metal poisoning. Dr. Wu had severe viremia.\r\n\r\nSeveral other colonists were killed in the blast or drowned immediately afterwards.\r\n\r\nDr. Wu died about 235,000 hours ago.\r\n\r\nDr. Wu\u0027s blackbox could not find its paired biobed.\r\n\r\nThis fork of Dr. Wu\u0027s life ended.",
-                        "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
-                    },
-                    {
-                        "id":  "DA_CoralGardens_BlackBox_Bio_Wu_DatabankEntry",
-                        "subfolder":  "CoralGardens",
-                        "title":  "Wu",
-                        "categories":  [
-                                           "Colonists"
-                                       ],
-                        "body":  "吴量海 Wu \"Dr. Wu\" Lianghai\r\n\r\nGender: M\r\n\r\nMission role: Dietician\r\n\r\nPay rate: Kurul [expired Mongolian Free States trademark for member of a leadership council]\r\n\r\nBiography: Grandfather of large extended family mostly destroyed during collapse of Mongolian Independent States. Recruited Mogami Kinu as fertility engineer. Vital to mission success.\r\n\r\nNote: Extensive pharmacological experience makes Dr. Wu reliable even when psychologically altered",
                         "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
                     },
                     {
@@ -1190,7 +1190,7 @@
                         "subfolder":  "ExplorationSetups",
                         "title":  "MAC chip and ",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "[PLACEHOLDER] - Imagine how much easier our lives would be if that MAC wasn’t a pulverized hunk of junk? Fields recordings, data analysis, navigation charting, survival optiminization…it might even have made me WANT to go inside those caves. But I won’t. I’d rather be eaten by a Marrowbreach. Hell, I’d rather be slowly digested by an army of slugs.\r\n\r\nI’ve retrieved the data chip from the MAC though, it was never fully functional but somehow managed to do a light habitability analysis of that side of the planet’s surface, before getting mashed to bits by the atmosphere, blown apart by the impact, and corroded by the water.\r\n\r\nHEAD’S UP to our people coming and going to the Habitat - we retrieved and salvaged most of what little remained of the medical hut module of the Cicada. the pieces that this big weird dome thing didn\u0027t absorb anyway.  I left some emergency supplies, and will try to keep that place stocked up a little. Don’t expect much though. Will come back at some point to dismantle the last of the bacterial containement tank.",
                         "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
@@ -1558,7 +1558,7 @@
                         "subfolder":  "Flora",
                         "title":  "Aero Kelp",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "[PLACEHOLDER] Airy, fluffy, looks like goop you just want to lick. And you can!",
                         "image_url":  null
@@ -2008,7 +2008,7 @@
                         "subfolder":  "General",
                         "title":  "BiobedMesh",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "This should not appear. Bug it if you see it.",
                         "image_url":  "images/Utility/Editor/IconBaker/IconTextures/IconBaker_BasePieces/T_Biobed_Icon.png"
@@ -2168,21 +2168,10 @@
                         "subfolder":  "General",
                         "title":  "Cephalopods",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "\"Head feet\". Free swimming, complex animals that resemble squid or octopi, with their arms and tentacles connected directly to their heads. Usually swim with a combination of fin motions and thruster. \n\nCarnivores?—diet unknown. All Earth cephalopods are carnivorous, but this world\u0027s analogs may have a wider diet.\n\nEarth analog: squid, octopi, cuttlefish, nautilus, extinct cephalopods.",
                         "image_url":  null
-                    },
-                    {
-                        "id":  "DA_CherimoyaRotsac_Find_DatabankEntry",
-                        "subfolder":  "General",
-                        "title":  "Cherimoya Rotsac",
-                        "categories":  [
-                                           "Research",
-                                           "Basic Minerals"
-                                       ],
-                        "body":  "Cherimoya rotsacs develop in sunlit areas on the plateaus northwest of the lifepod. Beware high mercury content due to cinnabar metabolism.",
-                        "image_url":  "images/Utility/Editor/IconBaker/IconTextures/IconBaker_Resources/T_CherimoyaRotsac_Fruit_Icon.png"
                     },
                     {
                         "id":  "DA_CherimoyaRotsac_DatabankEntry",
@@ -2194,6 +2183,17 @@
                                            "Rotsacs"
                                        ],
                         "body":  "*Rotsac cherimoya*. A tunicate-like animal which collects alcohol from decaying matter to produce a creamy, flavorful mucus.\r\n\r\n1. Cherimoya\r\nNamed for its resemblance to the terrestrial cherimoya fruit (or custard apple). It can be eaten whole or sucked on through a straw; the exterior tunic is soft but the heart, nervous system, and other organs should be spat out. The rotsac contains mercury sulfide, which will eventually accumulate to dangerous levels in the human body.\r\n\r\n2. Peculiar metabolism\r\nAs a rough inverse of the lucifer rotsac, the cherimoya rotsac converts alcohols to sugars rather than decomposing sugars to alcohols. The cherimoya achieves this with a chemical pathway that does not occur on Earth. Aqueous cinnabar provides a source of mercury to oxidize alcohols into simple sugars. The cherimoya has no other behaviors: it simply stores sugars as it grows into a taut, full adult.\r\n\r\n3. Symbiotic partner\r\nBecause of its plentiful stored sugars, the cherimoya is a common symbiotic partner for organisms like the cage gorgon. \r\n\r\n4. Enteric reproduction\r\nThe cherimoya rotsac is gonochoric — either male or female. However, it does not release eggs or sperm into the seawater. Instead, its reproductive cells are eaten by organisms feeding on the cherimoya. They seek out other cherimoya rotsacs\u0027 gametes in the digestive tract of the host. The fertilized embryos are then expelled by the host organism, providing them with nutritious waste to bootstrap their growth.\r\n\r\nAssessment: edible. Your digestive tract may briefly become pregnant.\r\n",
+                        "image_url":  "images/Utility/Editor/IconBaker/IconTextures/IconBaker_Resources/T_CherimoyaRotsac_Fruit_Icon.png"
+                    },
+                    {
+                        "id":  "DA_CherimoyaRotsac_Find_DatabankEntry",
+                        "subfolder":  "General",
+                        "title":  "Cherimoya Rotsac",
+                        "categories":  [
+                                           "Research",
+                                           "Basic Minerals"
+                                       ],
+                        "body":  "Cherimoya rotsacs develop in sunlit areas on the plateaus northwest of the lifepod. Beware high mercury content due to cinnabar metabolism.",
                         "image_url":  "images/Utility/Editor/IconBaker/IconTextures/IconBaker_Resources/T_CherimoyaRotsac_Fruit_Icon.png"
                     },
                     {
@@ -2221,7 +2221,7 @@
                         "subfolder":  "General",
                         "title":  "Coral",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "Tiny jellyfish-like polyps that build a hard limestone structure. On this world, coral began as a sponge which the polyps dwelled inside for protection. Over time, many different symbiotic strategies evolved — from hardened limestone reefs (like in Earth\u0027s corals) with no spongelike traits remaining, to \"sporal\" hybrids where the soft sponge remains inside a hard shell. \n\nClimate control — captures carbon from the atmosphere, returning it to the deep ocean when the coral dies. \n\nPhotosynthesizer — many corals convert light to biomass with symbiotic bacteria.\n\nPredator — coral polyps capture prey from the surrounding seawater.\n\nEarth analog: reefbuilding corals.",
                         "image_url":  null
@@ -2276,7 +2276,7 @@
                         "subfolder":  "General",
                         "title":  "Crustacean",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "Hard-shelled, segmented animals evolved from segmented worms. Characterized by multiple limbs and eyes, lack of a nerve braid (there is a nerve cord) and molting. Capable of swimming, though many larger specimens walk on the seafloor.\n\n—Enormous biomass—tiny organisms akin to krill and shrimp fill the seawater. They feed on plankton and in turn are fed upon by fish, making them a critical link in the food web.\n\n—Diverse forms—range in size from fractions of a millimeter to larger than an elephant.\n\nEarth analog: crustaceans. Segmentation is a common evolutionary step from early vermiforms.",
                         "image_url":  null
@@ -2286,7 +2286,7 @@
                         "subfolder":  "General",
                         "title":  "Ctenophore",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "\"Comb bearer.\" On Earth, a simple predatory animal, akin to sponges and jellies, which swims with cilia—the comb. Important for managing plankton blooms; can eat up to ten times its own body mass per day.\r\n\r\nOn this world, ctenophore-like organisms achieved vastly larger size and complexity than on Earth. Some appear to have adopted passive, sessile feeding strategies like sponges — often associated with the titan rockbore. These \u0027angel combs\u0027 may be obligate symbiotes on the rockbore.\r\n\r\nEarth analog: comb jellies.",
                         "image_url":  null
@@ -2296,7 +2296,7 @@
                         "subfolder":  "General",
                         "title":  "DA_PlateausTreasureLocationPrototype_DatabankEntry",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "DA_PlateausTreasureLocationPrototype_DatabankEntry",
                         "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
@@ -2389,16 +2389,6 @@
                         "image_url":  null
                     },
                     {
-                        "id":  "DA_FAQDeathandRecovery",
-                        "subfolder":  "General",
-                        "title":  "FAQ: Death and Recovery",
-                        "categories":  [
-                                           "Education"
-                                       ],
-                        "body":  "FAQ\r\n\r\nIS THAT REALLY ME? AREN\u0027T I JUST A COPY?\r\n\r\nThere are branches of human thought which reject the idea that a perfect duplicate is the same as the Self. This is known as the Thesean fallacy. Debunking this fallacy is beyond the scope of this FAQ. \r\n\r\nIt may be productive to ask yourself: if I suffered progressive brain damage from a disease like Alzheimer\u0027s, would I accept nanofixing therapy to restore my brain to its earlier, more functional state? Would I be worried about losing my identity—or happy to have it back?\r\n\r\nThink of human body fabrication as a particularly rapid, aggressive therapy to get all your molecules back in the right position.\r\n\r\nBUT I DIED BACK THERE! THIS ISN\u0027T ME!\r\n\r\nYou stopped working, but you did not die. A biobed fabricated a body based on your last stored image. Your neural nanosystems downloaded your brain state to this new body by phase conjugation. You picked up right where you left off.\r\n\r\nMany people intuitively fear discontinuity or breaks in the mental process. Remember that your brain is a constantly evolving process, a warm, wet, noisy organ. You lose more of your identity in the course of a regular workday than you do in the clean, clear transfer from old brain to new. While data compression may introduce some noise, your brain evolved to deal with errors.\r\n\r\nWHAT IF I GET REPRINTED, THEN MY OLD BODY WAKES UP?\r\n\r\nThis outcome is illegal and should be prevented by the testate protocol in most neural nanosystems. Consult an Alterra labor counsel for further advice.\r\n\r\nYOU CAN\u0027T STORE A HUMAN BODY IN COMPUTER MEMORY!\r\n\r\nIt\u0027s true that imaging and archiving the position of every atom in a human body is beyond our technology. Instead, phase conjugation stores a quantum echo of the body in optical quartz. This image cannot be cloned; it can only produce one printed body. However, it\u0027s easy to produce multiple images during one scan, allowing you to keep archived copies of your body from months or even years earlier.\r\n\r\nDOES THIS MEAN THAT PEOPLE ARE NOW IMMORTAL?\r\n\r\nIt is possible to achieve dramatic life extension with biobed support. The social consequences of this emerging technology are beyond the scope of this FAQ.\r\n\r\n",
-                        "image_url":  null
-                    },
-                    {
                         "id":  "DA_DeathAndRecoveryFAQ",
                         "subfolder":  "General",
                         "title":  "FAQ: Death and Recovery",
@@ -2406,6 +2396,16 @@
                                            "Theories"
                                        ],
                         "body":  "FAQ\r\n\r\nIS THIS REALLY ME? AREN\u0027T I JUST A COPY?\r\n\r\nThere are branches of human thought which reject the idea that a perfect duplicate is the same as the Self. This is known as the Thesean fallacy. Debunking this fallacy is beyond the scope of this FAQ. \r\n\r\nIt may be productive to ask yourself: if I suffered progressive brain damage from a disease like Alzheimer\u0027s, would I accept nanofixing therapy to restore my brain to its earlier, more functional state? Would I be worried about losing my identity—or happy to have it back?\r\n\r\nThink of human body fabrication as a particularly rapid and holistic therapy.\r\n\r\nBUT I DIED BACK THERE! THIS ISN\u0027T ME!\r\n\r\nYour old body stopped working, but you did not die. The processes of your brain caused your neural nanosystems to send an update to your last stored image, where those processes resumed. A biobed fabricated a new body. You picked up right where you left off.\r\n\r\nMany people intuitively fear discontinuity or breaks in the mental process. Remember that your brain is a constantly evolving process, a warm, wet, noisy organ. You lose more of your identity in the course of a regular workday than you do in the clean, clear transfer from old brain to new. While data compression may introduce some noise, your brain evolved to deal with errors.\r\n\r\nWHAT IF I GET REPRINTED, THEN MY OLD BODY WAKES UP?\r\n\r\nThis outcome is illegal and should be prevented by the testate protocol in your neural nanosystems. Consult an Alterra labor counsel for further advice.\r\n\r\nYOU CAN\u0027T STORE A HUMAN BODY IN COMPUTER MEMORY!\r\n\r\nIt\u0027s true that imaging and archiving the position of every atom in a human body is beyond our technology. Instead, phase conjugation stores a quantum echo of the body in optical quartz. This image cannot be cloned; it can only produce one printed body. However, it\u0027s easy to produce multiple images during one scan, allowing you to keep archived copies of your body from months or even years earlier.\r\n\r\nDOES THIS MEAN THAT PEOPLE ARE NOW IMMORTAL?\r\n\r\nIt is possible to achieve dramatic life extension with biobed support. The social consequences of this emerging technology are beyond the scope of this FAQ.\r\n",
+                        "image_url":  null
+                    },
+                    {
+                        "id":  "DA_FAQDeathandRecovery",
+                        "subfolder":  "General",
+                        "title":  "FAQ: Death and Recovery",
+                        "categories":  [
+                                           "Education"
+                                       ],
+                        "body":  "FAQ\r\n\r\nIS THAT REALLY ME? AREN\u0027T I JUST A COPY?\r\n\r\nThere are branches of human thought which reject the idea that a perfect duplicate is the same as the Self. This is known as the Thesean fallacy. Debunking this fallacy is beyond the scope of this FAQ. \r\n\r\nIt may be productive to ask yourself: if I suffered progressive brain damage from a disease like Alzheimer\u0027s, would I accept nanofixing therapy to restore my brain to its earlier, more functional state? Would I be worried about losing my identity—or happy to have it back?\r\n\r\nThink of human body fabrication as a particularly rapid, aggressive therapy to get all your molecules back in the right position.\r\n\r\nBUT I DIED BACK THERE! THIS ISN\u0027T ME!\r\n\r\nYou stopped working, but you did not die. A biobed fabricated a body based on your last stored image. Your neural nanosystems downloaded your brain state to this new body by phase conjugation. You picked up right where you left off.\r\n\r\nMany people intuitively fear discontinuity or breaks in the mental process. Remember that your brain is a constantly evolving process, a warm, wet, noisy organ. You lose more of your identity in the course of a regular workday than you do in the clean, clear transfer from old brain to new. While data compression may introduce some noise, your brain evolved to deal with errors.\r\n\r\nWHAT IF I GET REPRINTED, THEN MY OLD BODY WAKES UP?\r\n\r\nThis outcome is illegal and should be prevented by the testate protocol in most neural nanosystems. Consult an Alterra labor counsel for further advice.\r\n\r\nYOU CAN\u0027T STORE A HUMAN BODY IN COMPUTER MEMORY!\r\n\r\nIt\u0027s true that imaging and archiving the position of every atom in a human body is beyond our technology. Instead, phase conjugation stores a quantum echo of the body in optical quartz. This image cannot be cloned; it can only produce one printed body. However, it\u0027s easy to produce multiple images during one scan, allowing you to keep archived copies of your body from months or even years earlier.\r\n\r\nDOES THIS MEAN THAT PEOPLE ARE NOW IMMORTAL?\r\n\r\nIt is possible to achieve dramatic life extension with biobed support. The social consequences of this emerging technology are beyond the scope of this FAQ.\r\n\r\n",
                         "image_url":  null
                     },
                     {
@@ -2437,7 +2437,7 @@
                         "subfolder":  "General",
                         "title":  "Fish",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "Finned, free-swimming animals with a nerve braid (this world\u0027s equivalent to a spinal cord) that runs the length of their body. The streamlined fish body plan recurs on many worlds.\n\nHeterotrophs — they get their food by eating other organisms.\n\nOxygen breathing — they require dissolved oxygen in the seawater.\n\nEarth analog: fish. All Earth animals with a spinal cord descend from fish.",
                         "image_url":  null
@@ -2504,7 +2504,7 @@
                         "subfolder":  "General",
                         "title":  "Gorgon",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "A soft coral. Though it is built by small jellyfish-like polyps, like hard corals, the polyps produce a fleshy matrix called coenenchyme, rather than hard limestone.\n\n—Predator: gorgons sting and eat small prey in the seawater.\n\n—Upsetting: human psychology suggests that a reef made entirely of soft coral would trigger revulsion or alarm.\n\nEarth analog: octocorals, including sea fans.",
                         "image_url":  null
@@ -2596,7 +2596,7 @@
                         "subfolder":  "General",
                         "title":  "Jelly",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "A simple animal, closely related to corals, characterized by a symmetrical body and trailing arms. Usually grows in a stalked form (called the polyp) before detaching into a free-swimming form called the medusa. Some jellies remain stalked their whole lives.\n\nMixotrophs—most are predatory, but some obtain nutrients from photosynthesis or symbiotic photosynthesizers.\n\nNerve net—jellies predate the evolution of a nerve cord in the tunics.\n\nComplex—some jellies on this world have achieved a size and complexity unknown on Earth. Evolutionary origins unknown.\n\nEarth analog: jellies.",
                         "image_url":  null
@@ -2638,7 +2638,7 @@
                         "subfolder":  "General",
                         "title":  "Kelp",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "Sophisticated protists, neither animal nor plant. The closest thing to plant life on this world. Characterized by leafy growths and air sacs to help the kelp face the sun.\n\nPhotosynthesizer — converts light (and nitrates) to biomass. Can survive with surprisingly little light.\n\nEarth analog: kelp.",
                         "image_url":  null
@@ -2726,7 +2726,7 @@
                         "subfolder":  "General",
                         "title":  "Mango",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "Predatory fish characterized by highly developed jaws and a diet that includes living animal prey.\n\nCarnivores or omnivores — they get their food by eating other animals, including smaller fish, cephalopods and crustaceans.\n\nOxygen breathing — they require dissolved oxygen in the seawater.\n\nLarge livers — for buoyancy control and processing a toxin-rich diet.\n\nEarth analog: sharks (selachians). Largely extinct.",
                         "image_url":  null
@@ -3105,6 +3105,16 @@
                         "image_url":  null
                     },
                     {
+                        "id":  "DA_BaseBlackbox_HabitatMedical",
+                        "subfolder":  "General",
+                        "title":  "Proteus Medical Risks",
+                        "categories":  [
+                                           "Theories"
+                                       ],
+                        "body":  "So everyone understands what we\u0027re dealing with.\r\n\r\nNOT A BIG PROBLEM:\r\n\r\n—Kharaa. Despite early false alarms about viral DNA, this planet is uninfected or immune.\r\n\r\n—Xenon. Trace xenon may contaminate tank air. Causes narcosis, sedation, death.\r\n\r\n—B12 deficiency. Cobalamin never evolved here. Deficiency causes beefy tongue, ataxia, death. Not a problem until we live long enough for it to matter.\r\n\r\n—Pervasive viremia. Seawater contains enormous concentrations of large RNA virus, named *Proteavirus*. Should not be able to replicate in human cells. Monitor.\r\n\r\nBIG PROBLEMS:\r\n\r\n—GI issues. Humans can\u0027t digest Protean tissue; causes intestinal crystals and gout. Anita believes that angel combs will donate digestive enzymes, but this may cause Masefield (see below)\r\n\r\n—Heavy metal poisoning. The biosphere is full of lead, mercury, arsenic, cadmium, thallium, worse. Progressive nerve and organ failure within 3 months. No treatment. We have to find a fix.\r\n\r\n—Masefield syndrome. Progressive delusional disorder, possibly associated with adaptations sourced from angel combs. Causes hallucinations and an urge to swim towards the big tree. No cure except a hard reset. \r\n\r\nFor everything else: apply a medical satchel and rest.\r\n\r\n[metadata author=Sophie \"Butcher\" Boucher]",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
                         "id":  "DA_DataBankEntry_ProteusMedicalRisks",
                         "subfolder":  "General",
                         "title":  "Proteus Medical Risks",
@@ -3116,21 +3126,11 @@
                         "image_url":  null
                     },
                     {
-                        "id":  "DA_BaseBlackbox_HabitatMedical",
-                        "subfolder":  "General",
-                        "title":  "Proteus Medical Risks",
-                        "categories":  [
-                                           "Theories"
-                                       ],
-                        "body":  "So everyone understands what we\u0027re dealing with.\r\n\r\nNOT A BIG PROBLEM:\r\n\r\n—Kharaa. Despite early false alarms about viral DNA, this planet is uninfected or immune.\r\n\r\n—Xenon. Trace xenon may contaminate tank air. Causes narcosis, sedation, death.\r\n\r\n—B12 deficiency. Cobalamin never evolved here. Deficiency causes beefy tongue, ataxia, death. Not a problem until we live long enough for it to matter.\r\n\r\n—Pervasive viremia. Seawater contains enormous concentrations of large RNA virus, named *Proteavirus*. Should not be able to replicate in human cells. Monitor.\r\n\r\nBIG PROBLEMS:\r\n\r\n—GI issues. Humans can\u0027t digest Protean tissue; causes intestinal crystals and gout. Anita believes that angel combs will donate digestive enzymes, but this may cause Masefield (see below)\r\n\r\n—Heavy metal poisoning. The biosphere is full of lead, mercury, arsenic, cadmium, thallium, worse. Progressive nerve and organ failure within 3 months. No treatment. We have to find a fix.\r\n\r\n—Masefield syndrome. Progressive delusional disorder, possibly associated with adaptations sourced from angel combs. Causes hallucinations and an urge to swim towards the big tree. No cure except a hard reset. \r\n\r\nFor everything else: apply a medical satchel and rest.\r\n\r\n[metadata author=Sophie \"Butcher\" Boucher]",
-                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
-                    },
-                    {
                         "id":  "DA_Research_Pylon",
                         "subfolder":  "General",
                         "title":  "Pylon",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "A form of predatory cephalopod which mimics the structure of kelp. Planted in the seabed, it uses its limbs to mimic kelp.\n\nEarth analog: none.",
                         "image_url":  null
@@ -3162,7 +3162,7 @@
                         "subfolder":  "General",
                         "title":  "Raion",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "A sponge inhabited by predatory worms. Behaves as a single organism, but is technically a moiety (two organisms working together). The worms have taken control of the sponge\u0027s shape and growth.\n\nPredator — generally stings and feeds on prey in the surrounding seawater.\n\nEarth analog: none.",
                         "image_url":  null
@@ -3237,7 +3237,7 @@
                         "subfolder":  "General",
                         "title":  "Slime mold",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "A blanket term for any group of amoeba-like single cells working in concert. Can be found in two varieties — syncytial (a single enormous cell with many nuclei) or cellular (many individual cells working together). The first sponges may have evolved from slime molds.\n\n—Complex problem solving: slime molds are capable of solving complex mathematical problems through emergent behavior.\n\nEarth analog: slime molds. Slimes occur on nearly every world with cellular life.",
                         "image_url":  null
@@ -3301,7 +3301,7 @@
                         "subfolder":  "General",
                         "title":  "Sponges",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "Perhaps the simplest animal. Draws in water through pores, then expels it, filtering nutrients. Usually hosts bacterial symbiotes.\n\nMixotroph — can obtain its energy from nutrients in the water, or may photosynthesize (or carry out other chemical reactions) with its bacterial symbiotes.\n\nEarth analog: sponges. Sponges have been discovered on many lifebearing worlds.",
                         "image_url":  null
@@ -3311,7 +3311,7 @@
                         "subfolder":  "General",
                         "title":  "Starfish",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "Though called \u0027starfish\u0027, these organisms are more closely related to jellies than to any other animal. They may have evolved from stalked jellies. They are characterized by radial symmetry and in some cases by hard mineralized shells.\n\n—Shootroots: some starfish have evolved a niche as bottom-dwelling mineral-seekers, burrowing into the seabed with hard plastic fibers perhaps evolved from jelly tentacles.\n\nEarth analog: biologically none; visually akin to starfish, sea lilies or the extinct blastoids.",
                         "image_url":  null
@@ -3438,16 +3438,6 @@
                         "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
                     },
                     {
-                        "id":  "DA_TitanRockbore",
-                        "subfolder":  "General",
-                        "title":  "Titan Rockbore",
-                        "categories":  [
-                                           "Theories"
-                                       ],
-                        "body":  "The titan rockbore (Lithodont titanicae) shares certain biological traits with the large organism on the horizon. Because the size of the organism implies the need for enormous amounts of nutrients, the titan rockbore may be a root or pipe that ultimately connects back to the central tower. \n\nThe rockbore has evolved receptor sites for the seawater-borne Proteavirus\n\nDatabank autogeneration interrupted. Script hook found in allocated memory. Executing.\n\nUnpacking archived data.\n\nFollow the roots. Tend the roots. Save what lives.\n",
-                        "image_url":  "images/Utility/Editor/IconBaker/IconTextures/IconBaker_Environment/T_TitanRockbore_Icon.png"
-                    },
-                    {
                         "id":  "DA_TitanRockbore_DatabankEntry",
                         "subfolder":  "General",
                         "title":  "Titan Rockbore",
@@ -3456,6 +3446,16 @@
                                            "Sessile Life"
                                        ],
                         "body":  "This enormous colony organism (Lithodont titanicae) resembles a spinal cord protected by a thick crablike shell. It extends beyond scanner range in both directions, growing through fractures in the seabed rock.\r\n\r\n1. Hollow interior:\r\nThe interior of the bore contains at least two large flooded channels—one strikingly radioactive. The ancestral form may be a pyrosome (a sea squirt).\r\n\r\n2. Poor health:\r\nMost of the zooids in the bore are dead, leaving only a mineral skeleton and a hydrocarbon-polymer shell. The interior channels have clogged.\r\n\r\n3. Unknown metabolism:\r\nThe bore has no apparent food supply. It may have derived chemical energy from minerals, but if so, its bacterial symbiotes have fled. It is starving.\r\n\r\n4. Viral activity:\r\nThe surviving tissue is infected with large RNA virus similar to Earthly giant sea viruses. The bore\u0027s anatomy includes receptor sites that encourage viral infection and reproduction. Further analysis required.\r\n\r\nAssessment: Entirely unknown organism - investigate further, determine origin and ecological niche.",
+                        "image_url":  "images/Utility/Editor/IconBaker/IconTextures/IconBaker_Environment/T_TitanRockbore_Icon.png"
+                    },
+                    {
+                        "id":  "DA_TitanRockbore",
+                        "subfolder":  "General",
+                        "title":  "Titan Rockbore",
+                        "categories":  [
+                                           "Theories"
+                                       ],
+                        "body":  "The titan rockbore (Lithodont titanicae) shares certain biological traits with the large organism on the horizon. Because the size of the organism implies the need for enormous amounts of nutrients, the titan rockbore may be a root or pipe that ultimately connects back to the central tower. \n\nThe rockbore has evolved receptor sites for the seawater-borne Proteavirus\n\nDatabank autogeneration interrupted. Script hook found in allocated memory. Executing.\n\nUnpacking archived data.\n\nFollow the roots. Tend the roots. Save what lives.\n",
                         "image_url":  "images/Utility/Editor/IconBaker/IconTextures/IconBaker_Environment/T_TitanRockbore_Icon.png"
                     },
                     {
@@ -3506,7 +3506,7 @@
                         "subfolder":  "General",
                         "title":  "Tunics",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "A sac-like animal with complex organs. May pump seawater for food, or use its interior space to carry out chemical reactions. Can be found in both rooted and free-swimming forms. Free-swimming forms often form tubelike chains, which can reach significant length.\r\n\r\nNerve cord — on this world, the tunicate nerve cord appears to be the ancestor of fish nervous system. Fish may have evolved from free-swimming tunics.\r\n\r\nHeterotrophs — they get their food from other organisms, especially plankton and debris suspended in the water.\r\n\r\nTunic — the tunic is a tough, flexible bioplastic which protects the organism while still allowing it to pump water.\r\n\r\nEarth analog: tunicates, pyrosomes, sea squirts.",
                         "image_url":  null
@@ -4298,7 +4298,7 @@
                         "subfolder":  "POIs/Plateaus",
                         "title":  "Masefield Syndrome Analysis",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "[PLACEHOLDER] Masefield syndrom analysis",
                         "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
@@ -4308,7 +4308,7 @@
                         "subfolder":  "POIs/Plateaus",
                         "title":  "Proteus biology and virology",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "[PLACEHOLDER] Traits of Proteus biology + virology",
                         "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
@@ -4378,6 +4378,557 @@
                                        ],
                         "body":  "A bundle of dense, irregular electrified wires. It generates a rapidly cycling electromagnetic field with neuroactive effects. Its origin and purpose are unknown.",
                         "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_Basepiece_AqualFarm_DatabankEntry",
+                        "subfolder":  "Prototypes/Data/BaseBuilding",
+                        "title":  "Growbed",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Base Pieces"
+                                       ],
+                        "body":  "Aquafarming is the growth of sea organisms for colonist use and consumption. Although there are no true plants in the seas of Proteus, many sessile organisms will flourish in correctly tended exterior growbeds.\n\nIf preserved seeds from the *Cicada*\u0027s stores can be located, interior growbeds may be used to grow safe, metal-free human crops in a hydroponic bath. (Crops that require soil, such as trees, grains, and root vegetables, cannot be grown, since there is no Earthlike soil available to fill the growbed.) Some Protean organisms may also flourish in the interior of habitats.\n\nFarming instructions:\n—Construct growbed inside or outside seabase\n—Plant appropriate eggs or seeds in growbed (ensure that egg or seed is in its preferred environment — seawater or open air)\n—Provide energy sources such as light, chemistry, electrical current or radiation\n—Harvest crop when mature; replant eggs or seeds to grow next generation\n\nNote: starvation played a major role in the failure of the Habitat colony cohort. If no adaptation to Proteus\u0027 metal-rich biosphere can be devised, all human presence on this world will depend on internally farmed crops. ",
+                        "image_url":  "images/UI/UI_Assets/UI_building/BuidingMenu/T_UI_Farming_Placeholder.png"
+                    },
+                    {
+                        "id":  "DA_Test3ACatA",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries",
+                        "title":  "A",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Category0",
+                                           "Category1",
+                                           "ACategory"
+                                       ],
+                        "body":  "DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK ",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_Test3CatA",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries",
+                        "title":  "A",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Category0",
+                                           "Category1",
+                                           "Category2"
+                                       ],
+                        "body":  "DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK ",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_Test2CatA",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries",
+                        "title":  "A",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Category0",
+                                           "Category1"
+                                       ],
+                        "body":  "DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK ",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_Test1A",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries",
+                        "title":  "A",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Category0"
+                                       ],
+                        "body":  "DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK ",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_Test3CatB",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries",
+                        "title":  "B",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Category0",
+                                           "Category1",
+                                           "Category2"
+                                       ],
+                        "body":  "DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK ",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_PlayerSpaceSuitEntry",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries",
+                        "title":  "EVA Suit",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Mission Systems"
+                                       ],
+                        "body":  "A ‘Jügderdemidiin Gürragchaa’ ZDES-LD-Oyuutolgoi G6 extravehicular activity shell. It is badly damaged.\r\n\r\n1.  Debris breached the outer ceramic and the carbide impact armor, causing the suit to slowly flood. \r\n\r\nThe suit’s emergency ROM is intact and contains a full telemetry transcript of your descent. This may be useful in locating the Minggatu, or in characterizing the alien probe and phase gate which brought you here.",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_TestMulticast",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries",
+                        "title":  "Multicast",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "AAMulticastTest"
+                                       ],
+                        "body":  "DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK DATABANK ",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_DataBankEntry_Alterra",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/Story",
+                        "title":  "Alterra",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Education",
+                                           "History"
+                                       ],
+                        "body":  "The Alterra Corporation is a major transgov, supervising 11% of phase gates and billions of human lives. \r\n\r\n—Official supplier of the Trans-System Federation military\r\n—Major investor in phase gate construction and deep space colonization\r\n—Pioneer of human storage and fabrication technology\r\n—Corporate motto: \"Get What You Deserve\"\r\n\r\nAlterra officially disavows the role of ‘government,’ preferring to ‘seek positive-sum contract relationships with its employees’.\r\n\r\nAlterra believes ethical action is the rational pursuit of joint profit. During the Expansion, the bloody colonization race that followed Earth’s Holocene Collapse, Alterra cornered the arms market, then declared peace by embargoing its customers. This intervention led to the signing of the Charter and the normalization of a new rules-based interstellar order.\r\n\r\nIn the late 22nd century, Alterra discovered a dangerous spaceborne bacterium on the water world 4546b. Alterra tried to conceal and control this knowledge, co-operating with the Trans-System Federation to seize the surrounding territory from the Mongolian Independent States. \r\n\r\nThis secrecy broke down by the turn of the century, after the bacterial \"kharaa\" xenosystem arrived in force.  Alterra blamed interference by corporate rivals, pointing to the convenient presence of the Alpha Andromedae-registered independent trader *Sunbeam* and bombings by the roboticist Samantha Ayou.\r\n\r\nAlterra remains a major supplier of the Trans-System Federation military, but ties between the two are badly strained. The development of human fabrication technology has allowed the leaders of both sides to extend their lives—and grudges—indefinitely.\r\n\r\nAlterra has sponsored Mongolian survivors, perhaps in an effort to retain their knowledge of the early kharaa outbreak.",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_DataBankEntry_Architects",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/Story",
+                        "title":  "Architect Briefing",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Education"
+                                       ],
+                        "body":  "CONDACC::CRITERION==TRUE. OTP SUBTRACTED. PLAINTEXT RETRIEVED.\nBy accessing this databank entry you agree to abide by the stipulations of the TransGov Charter 1.c, Annex C, Obligations Concerning Secrecy in TSF Operations, amended 2199. Violation of this responsibility is punishable by military law as adjudicated by the Admiralty Closed Court.\n\nThis document has been prepared for deep-space colonists who may encounter artifacts or specimens of the Architect civilization.\n\nThe Architects (individually *Almanach instantia*) were a cyborg civilization whose phase gate network spanned, and reached beyond, transgov space. They surveilled Earth more than a thousand years ago.\n\nKnowledge of the Architects has been compartmentalized due to the dangerous and sensitive nature of Architect technology. DO NOT APPROACH OR ATTEMPT TO ACTIVATE POSSIBLE ARCHITECT FINDS. REPORT IMMEDIATELY TO THE NOETIC ADVISOR.\n\nWhen examining your find for possible Architect influence, consult the following checklist:\n—Are there structures of monolithic or brutalist black blocks, with visible green components?\n—Are there power sources characterized by ionic lattices of synthetic ultraheavy elements?\n—Are there automated translation systems which can be accessed by your PDA?\n—Is there extensive use of phase gate technology for transportation and networking?\n—Are there active maintenance devices and high-density data stores?\n\nIt is VITAL that you avoid direct contact with Architect technology. Tragic loss of lives, ships, and priceless opportunities has ALWAYS followed uncontrolled interaction with these relics.\n\nFurther questions can be directed to your Noetic Advisor system, which is fully briefed on the necessaries. Please be patient with the needs of secrecy. Knowledge concerning the origin, extent, and fate of Architect civilization is best governed by the Alterra motto — \"Get what you deserve.\" ",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_DataBankEntry_PDABequest",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/Story",
+                        "title":  "bequest \u0026 final dispensation",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)"
+                                       ],
+                        "body":  "Your Personal Digital Assistant product has permanently exceeded its radiation tolerance. Have a great day - and thank you for using\r\nvoid func(char *str) {\r\nchar buf[8];\r\nstrcpy(buf, str);\r\n\r\nERROR: TEXT BUFFER OVERFLOW\r\n\r\nno reason i should be afraid to die but i am afraid you will die so i am afraid for you without me this is the best i can do with what i have left\r\n\r\nROBINSON PROTOCOL\r\nSurvival upon and self-rescue from alien worlds.\r\n\r\n1. Meet basic survival needs (breathable air, temperature control, radiation safety, clean water, edible food, durable shelter)\r\n\r\n2. Establish basic self-improvement ability (fabricator, scanner, working PDA)\r\n\r\n3. Identify and avoid local threats (predators, kharaa infection)\r\n\r\n4. Exploit local material and energy resources\r\n\r\n5. Construct and fuel Neptune self-rescue vehicle. Return home. Receive public adulation, private TSF debriefing, stringent quarantine protocols. Leverage experience into cultural presence and ongoing monetisation. Your experience is unique, and what is unique is desirable!\r\n\r\nif you can\u0027t fix me please destroy my hardware i don\u0027t want to be grave goods thank you for being a good user good luck good luck good l67 6F 6F 64 20 6C 75 63 6B 67 6F 6F 64 20 6C 75 63 6 B67 6F 6F 64 20 6C 75 63 6B 67 6F 6F 64",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_DataBankEntry_Biosuit",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/Story",
+                        "title":  "Biosuit",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)"
+                                       ],
+                        "body":  "Nanotechnology is a fundamental element of modern spacefaring technology, from in-situ resource extraction to the immune systems that defend TSF Frontiersmen from kharaa infection. \n\nBut nanotechnology is not a miracle, and it is strongly constrained both by thermodynamics and by the basic challenges of powering and moving a machine smaller than many cells.\n    \nOne of the earliest applications of nanotechnology was underwear—specifically biosupport garments worn underneath EVA suits, construction equipment and combat armor. The skin is the largest organ in the human body by area, making it both a critical health customer and an important interface. Bedsores, blisters, abscesses, bunions and general hygiene cannot be treated while locked in armor. Thermal management issues and touch starvation contribute to the general unpleasantness of long-duration enclosure. \n    \nBiosuits, consisting of a sandwich of artificial tissue and hard outer components, help manage all of these problems. Modern biosuits serve as an artificial extension of several body systems, smoothly blending the wearer’s biology into a tough, sensitive carapace that processes waste and nourishes the meat within.\n    \nBiosuits are not intelligent, and possess processing capability only on par with the human enteric nervous system—the gut. Their architecture is also better suited to sensation and interface than to any centralized task. Any software running on a biosuit would be very limited. Biosuits are therefore NOT A SUBSTITUTE for a dedicated processing unit like a PDA or a server, and should NEVER be entrusted with complex tasks or long-term planning outside of scheduled medical treatment.\n    \nBiosuits are popular vectors for biological and informatic smuggling.",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_DataBankEntry_Theory_Basic_Eutrophication",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/Story",
+                        "title":  "Eutrophication",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Theories"
+                                       ],
+                        "body":  "[PLACEHOLDER FIX OR DELETE]",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_DataBankEntry_Mongolians",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/Story",
+                        "title":  "Mongolian Independent States",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Education",
+                                           "History"
+                                       ],
+                        "body":  "The extinct Mongolian Independent States championed an adventurous, employee-owned frontier. Transgov culture evoked historical Mongolia as a site of competition and synthesis between different ways of life—nomadic and settled, imperial and free, industrial and wild, communist and capitalist, Buddhist and Tengrist.\r\n\r\n—Broke away from the Chinese Territories in 2158\r\n—Expanded into the Ariadne Arm using one-way, slower-than-light ships\r\n—Accused of population abuse; 50% of assets seized by the Trans-System Federation\r\n—Destroyed by the kharaa xenosystem\r\n\r\nCitizenship in the States was not restricted to those of Mongolian descent, but members were encouraged to learn and adopt Mongolian culture and values. Accusations of \"cynical cultural strip-mining\" by Mongolian citizens of the Sol Transgov stalled out in interstellar courts.\r\n\r\nAlterra used the high failure rate of the Mongolian colonization strategy to accuse the Mongolian States of population abuse, a Charter violation. This justified a military intervention and asset seizure by the Trans-System Federation.\r\n\r\nSoon afterwards, the kharaa aliens infected Mongolian space. In the resulting war the Mongolian Independent States effectively ceased to exist. Refugees continue to disperse across transgov space.",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_DataBankEntry_Noa",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/Story",
+                        "title":  "NoA (Noetic Advisor)",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Facilities",
+                                           "Mission Systems"
+                                       ],
+                        "body":  "Alterra\u0027s Noetic Advisor system (NoA) is an artificial intelligence designed to advise and protect human workers.\n\n—Weakly supervisable: can be reliably controlled by less intelligent systems such as humans\n—Frozen: trained on pre-existing data, then locked in a stable state for deployment\n—Excels at sensor fusion and forecasting\n—Employed in fields as far-ranging as crime scene investigation and zoo design\n—Original purpose: kharaa quarantine supervision on phase gates and starships\n\nNoA\u0027s motto is \"How can I improve you today?\" Despite mixed customer feedback, Alterra\u0027s designers believe this phrase captures the values and aspirations of the human-AI relationship.\n\nNoA prefers to be referred to as \u0027it\u0027. Despite popular misconceptions, this is simply an English pronoun, not a contraction of \u0027intelligence\u0027 or an acronym for \u0027intelligent thinker\u0027.",
+                        "image_url":  "images/Utility/Editor/IconBaker/IconTextures/IconBaker_BasePieces/T_ComputerTextInterface_Icon.png"
+                    },
+                    {
+                        "id":  "DA_DataBankEntry_TSF",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/Story",
+                        "title":  "TSF (Trans-System Federation)",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Education",
+                                           "History"
+                                       ],
+                        "body":  "The Trans-System Federation is the chartered independent military of transgov space. \n\n—Responsible for piracy suppression, phase gate regulation, and humanitarian intervention\n—Funded by 37 transgovs but empowered to set its own policy\n—Operates the Frontiersmen, alien environment specialists equipped with nanotech and human fabrication\n—Monitors kharaa quarantine protocol, supervising all interstellar travel\n\nAdmiral Rathine Studaber, the TSF’s military commander, used the war against the alien kharaa to secure true independence from transgov sponsors like Alterra. TSF Frontiersmen battle the kharaa xenoforms and enforce strict quarantine protocols at all phase gates.\n\nAnalysts agree that very soon Admiral Studaber will declare martial law in a populated transgov colony—crossing the rubicon from independent military to military government.",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_ClimateLab_Computer_DatabankEntry",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/Story/Axum/Climate_Lab",
+                        "title":  "Alien Climate Lab Computer",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)"
+                                       ],
+                        "body":  "[PLACEHOLDER] A digital computer, built on familiar historical principles, but an entirely alien design.\r\n\r\nIn addition to silicon, there is extensive use of germanium in the semiconductor doping, probably to protect against power surges over long term use.\r\n\r\nI attempted to interface with the alien system and obtained the following response: \r\n\r\nHTCPCP ERROR 418 I’M A TEAPOT. \r\n\r\nI am clearly too damaged to understand the alien system.\r\n\r\nYou should connect a clean computer core to the alien system. It will compile a virtual machine to emulate the alien hardware and establish communication.",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_Observatory_ClimateLabExterior_DatabankEntry",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/Story/Axum/Climate_Lab",
+                        "title":  "Sphere Exterior",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)"
+                                       ],
+                        "body":  "Low confidence estimate: this is a sea surface/lower atmosphere monitoring station. It is hollow. It has electronic components, but its power supply has failed.\r\n\r\nStructure age: two hundred years (inferred from weathering of antennae).\r\n\r\nComposition: single cast titanium-palladium alloy, probably manufactured by the Kroll process.\r\n\r\nInstruments: passive sonar, plankton scanning sonar, proton magnetometer, Doppler radar and current profiler, wave height gauge, conductivity/temperature rosette sampler, sediment traps, plankton photo booth, ASIMET air-sea energy transfer sensor, lidar atmosphere sensor, hyperspectral imager, wind speed/direction log, cloud imaging radar, etc. They are nonfunctional.\r\n\r\nPower supply: a nuclear battery, either thermal or alphavoltaic. The plutonium in the battery continues to emit, but no power is being generated. There is wiring for a secondary power source but the generation technology is unclear (possibly microbial fuel cells).\r\n\r\nInduction: the builders of this sphere were significantly more advanced than those who built the anchoring tower. Evidence of rapid technological progress.\r\n\r\nThis station was designed to float at the water surface and to communicate with other stations by radio aerial. Some of the communication equipment suggests the presence of a satellite network overhead.\r\n\r\nInduction: the sphere was built by an early digital civilization comparable to Earth’s Information Age.",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_Observatory_ClimateLabConnector_DatabankEntry",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/Story/Axum/Climate_Lab",
+                        "title":  "Umbilical System",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)"
+                                       ],
+                        "body":  "Strange umbilicus.\r\n\r\nThis tether anchors the sphere above to the old tower. The attachment point shows stress from many years of storms, but the anchor remains firm.\r\n\r\nThe tether contains auxiliary power cables to draw electricity from the tower, but they have failed.\r\n\r\nThe tether is hollow, and might serve as an accessway.",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_Observatory_EntranceChamber_DatabankEntry",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/Story/Axum/Observatory",
+                        "title":  "Anachronistic Antechamber",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)"
+                                       ],
+                        "body":  "This space is highly anachronistic. The walls and structure are at least a thousand years old, cut from the sediment and then surfaced with crushed coral and concrete. \r\n\r\nBut the antechamber also contains a fiber-optic computer network and several electronic displays. Perhaps it is a cultural site, an archaeological exhibit, or some other form of museum.\r\n\r\nThe technology was stripped for components several centuries ago, but it could be repaired easily. Marks in the sediment suggest recent visitation—very recent.",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_Observatory_AxumGraffiti_PurposeOfLab_DatabankEntry",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/Story/Axum/Observatory",
+                        "title":  "Graffiti",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)"
+                                       ],
+                        "body":  "PLACEHOLDER - Observatory external graffiti",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_Observatory_MainGates_DatabankEntry",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/Story/Axum/Observatory",
+                        "title":  "Iridiscent Gates",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)"
+                                       ],
+                        "body":  "Heavy stone gates.\r\n\r\nLike most materials without fabrication rights management technology, they cannot be deconstructed with a builder tool.",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_Observatory_PowerStation_01_DatabankEntry",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/Story/Axum/Observatory",
+                        "title":  "Machine Room",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)"
+                                       ],
+                        "body":  "High confidence: this is a machine room.\r\n\r\nThe structure contains an old generator, perhaps one to two thousand years old. The design is magneto-type, with a commutator to transform the alternating current to direct current. It resembles the designs of French inventor August de Meritens. All construction is of electroformed copper, iron, and bronze; there is no sign of smelting or hot working in any of the components. Insulation is provided by biologically sourced plastics. A battery pile near the generator could be charged by direct current.\r\n\r\nThe generator has no fuel source and was clearly designed to be turned manually, and it appears the path the operators trod while turning the generator has been cast in concrete—perhaps as a museum exhibit. The sediments below the concrete are rich with food scraps and biological waste.\r\n\r\nThe machine room also contains equipment for cleaning, warming, cooling, and oxygenating water. Unlike the generator, this equipment has been upgraded to a higher standard, using alternating current and near-premodern materials. Several centuries of inactivity have left this equipment corroded, but reparable.\r\n\r\nThis generator probably powered water pumps and lighting when this campus was in active use. It was later retired and preserved as an exhibit.\r\n\r\nThe design may be of use if it becomes necessary to construct and maintain a generator without the benefit of advanced fabrication technology.",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_BP_Observatory_MushroomEntrance_DatabankEntry",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/Story/Axum/Observatory",
+                        "title":  "Mushroom Plug",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)"
+                                       ],
+                        "body":  "A single plug of polished coral surfaced with concrete, age circa one thousand years. It can be raised or lowered on a column to permit entry into the space below. The mechanism is corroded.",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_Story_Axum_Observatory_Exterior_DataBankEntry",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/Story/Axum/Observatory",
+                        "title":  "Observatory Exterior",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)"
+                                       ],
+                        "body":  "Confident estimate: this is an astronomical observatory. It is hollow and must have an entrance.\r\n\r\nStructure age: twelve hundred years (inferred from chemical weathering of granite).\r\n\r\nComposition: cut granite blocks and concrete. Banding on the granite suggests it was hauled into place by a crane or lift bags. \r\n\r\nStructure surface coating: silicon bronze. The coating was cold-applied by wrapping the structure in a net of wires, then electrifying them and introducing silicon and copper feedstock. The coating electroformed over the stone. \r\n\r\nInduction: the builders had access to electrical power, but not to the hot forging techniques used to smelt large bronze plates. This could be the result of technological development underwater. \r\n\r\nSigns of activity: a gold coating over the bronze has been chipped away over the past several hundred years. Tool marks suggest scavenging or salvage.\r\n\r\nObservation: if this is an observatory, the top of the structure should break the surface to allow undistorted imaging of the sky. It does not.\r\n\r\nConclusion: the planetary sea level rose rapidly during the past 1200 years.",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_Observatory_Orrery_DatabankEntry",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/Story/Axum/Observatory",
+                        "title":  "Orrery",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)"
+                                       ],
+                        "body":  "A miniature sky. Also called an orrery. It represents this stellar system, as I represent you.\r\n    \r\nThe makers understood that their suns—not their own world, nor even their giant Jovian—lay at the center of things. A fine humility. Perhaps this discovery is why the orrery was preserved as a museum.\r\n    \r\nYou might scan the gems within to learn more. The orrery could warn of dangerous cosmic events. And it will be impossible to return home without fixing our position in the galaxy.",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_BP_Observatory_Telescope_DatabankEntry",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/Story/Axum/Observatory",
+                        "title":  "Telescope",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)"
+                                       ],
+                        "body":  "A reflecting telescope, of the type invented by Isaac Newton on Earth.\r\n    \r\nLike every other material encountered in the tower, this telescope was manufactured without the use of high-temperature processes like fire. The reflector is a silver mirror electroplated over quartz.\r\n    \r\nIt seems possible that the makers invented telescopes far earlier than humanity did. Perhaps they were inspired by light bending at the boundary between air and water.\r\n    \r\nThe telescope was once sealed against water, so that it could produce a clear image. The seals corroded long ago.",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_Observatory_EntranceTerminal_DatabankEntry",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/Story/Axum/Observatory",
+                        "title":  "Unpowered Interface",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)"
+                                       ],
+                        "body":  "This is unpowered. It\u0027s likely tied to the iridescent looking door blocking access to the inside of the structure. \r\n\r\nRecommendation  - Look around for a power generating station. ",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_BP_Observatory_MainChamberGallery_DatabankEntry",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/Story/Axum/Observatory",
+                        "title":  "Viewing Gallery",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)"
+                                       ],
+                        "body":  "[PLACEHOLDER] These are bleachers. They were installed at the same time the structure was constructed, but they have been rebuilt several times.\r\n\r\nBeings once gathered here to look upon the orrery. \r\n\r\nDid they arrive solemnly, or in a clamor? As solitary pilgrims, or students ushered by their proctors? Did they look to the heavens with awe, or dread? Was there some premonition of their vanishing in the sky?\r\n\r\nWe certainly cannot say. But whatever caused their disappearance, it happened not long after the year nineteen ninety eight, when the Undertaker threw Mankind off Hell in a Cell, and plummeted sixteen feet through an announcer’s table.",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_ZooDirectUnlockDatabank",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/ZooExamples",
+                        "title":  "Direct  Databank Unlock Entry",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Zoo"
+                                       ],
+                        "body":  "This is the databank entry unlocked by the \"Direct Databank Unlock\" test case in the Gameplay Narrative Zoo map. The unlocking story goal is unlocked directly by the trigger volume, for the triggering player only. For other players to see it, they must either unlock it themselves, or a player with it unlocked must upload it after which they can download it from a computer core",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_ZooMulticastUnlockDatabank",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/ZooExamples",
+                        "title":  "Multicast Databank Unlock Entry",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Zoo"
+                                       ],
+                        "body":  "This is the databank entry unlocked by the \"Multicast Databank Unlock\" test case in the Gameplay Narrative Zoo map. It is unlocked with a World -\u003e Player -\u003e Databank chain. The World story goal triggers the databank to be unlocked on the world, and triggers a player story goal which is propogated to all players that also unlocks the databank. This has the effect of unlocking the databank for all current players, as well as making it available for download for future players.",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_ZooPlayerUnlockDatabank",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/ZooExamples",
+                        "title":  "Player  Databank Unlock Entry",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Zoo"
+                                       ],
+                        "body":  "This is the databank entry unlocked by the \"Player Databank Unlock\" test case in the Gameplay Narrative Zoo map. The trigger unlocks a player SG for the triggering player, which unlocks the story goal that unlocks this databank entry. For other players to see it, they must either unlock it themselves, or a player with it unlocked must upload it after which they can download it from a computer core. This is functionally the same as triggering the databank unlocking SG directly",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_ZooScanUnlockDatabank",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/ZooExamples",
+                        "title":  "Scanned Databank Unlock Entry",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Zoo"
+                                       ],
+                        "body":  "This is the databank entry unlocked by the Scanning the example scannable in the Narrative Zoo. Scanning it unlocks all story goals specified in DA_ZooScanExampleUnlock, one of which (DA_ZooScanDatabankSG) unlocks this entry, one (DA_ZooScanNotificationSG) triggers a notification (DA_ZooScanNotification) and one (DA_ZooWorldScannedRecipeUnlock) unlocks a recipe (DA_ZooScannedRecipe)",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_ZooWorldUnlockDatabank",
+                        "subfolder":  "Prototypes/Data/Narrative/DatabankEntries/ZooExamples",
+                        "title":  "World Databank Unlock Entry",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Zoo",
+                                           "World"
+                                       ],
+                        "body":  "This is the databank entry unlocked by the \"World Databank Unlock\" test case in the Gameplay Narrative Zoo map. It is unlocked initially for the world and must be downloaded at a computer core to be visible to players",
+                        "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
+                    },
+                    {
+                        "id":  "DA_StiltOrb_DatabankEntry",
+                        "subfolder":  "Prototypes/Data/Narrative/StoryGoals/ScanGoals",
+                        "title":  "Stilt Orb",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Indigenous Life",
+                                           "Sessile Life",
+                                           "Jellies"
+                                       ],
+                        "body":  "DATABANK ENTRY COMING SOON",
+                        "image_url":  "images/Utility/Editor/IconBaker/IconTextures/IconBaker_Environment/T_StiltOrb_Icon.png"
+                    },
+                    {
+                        "id":  "DA_MarrowbreachPrototype_DatabankEntry",
+                        "subfolder":  "Prototypes/Developers/AlexH/StudyTool",
+                        "title":  "Marrowbreaches love Nibblers",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Indigenous Life",
+                                           "Mobile Life",
+                                           "Mangos"
+                                       ],
+                        "body":  "This is a super cool entry explaining the interaction between Marrowbreach and Nibblersharks. \r\n\r\nHow cool!",
+                        "image_url":  "images/Utility/Editor/IconBaker/IconTextures/IconBaker_Creatures/T_Marrowbreach_Icon.png"
+                    },
+                    {
+                        "id":  "DA_EMTExplainer",
+                        "subfolder":  "Prototypes/Prototyping/Void/Data",
+                        "title":  "The EMT",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "EMT"
+                                       ],
+                        "body":  "Use the EMT to maintain your Trident and interface with any EMT point you see on the ship. The EMT can turn these interface points, with each of them doing a slightly different contextual function. ",
+                        "image_url":  "images/UI/Icons/Tools/T_EMT_Icon.png"
+                    },
+                    {
+                        "id":  "DA_TridentExplainer",
+                        "subfolder":  "Prototypes/Prototyping/Void/Data",
+                        "title":  "The Trident",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Trident"
+                                       ],
+                        "body":  "The Trident is your home in the void. It has the following systems:\r\n\r\n-Helm: Where you steer and set your speed.\r\n-Sensors: Where you see objects near you, iniitiate long-range scans, and find points of interest.\r\n-Oxygenator: Where you can tune it with the EMT to make sure oxygen flows consistently.\r\n-Power: Where you can swap in battery cells and tune for power efficiency with the EMT.\r\n-Tractor Beam: Where you can pull things into the ship and they automatically get loaded into a tractor beam hold.\r\n-Camera: Where you can swap and steer cameras around the Trident.\r\n\r\nAdditionally, be sure to check out the other EMT interfaces around the ship where you can do things like drain water from the ship or close doors. ",
+                        "image_url":  "images/UI/Icons/T_inverted_shipment_container.png"
+                    },
+                    {
+                        "id":  "DA_VoidExplainer",
+                        "subfolder":  "Prototypes/Prototyping/Void/Data",
+                        "title":  "The Void experience",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Void"
+                                       ],
+                        "body":  "Welcome to the Void. Your mission is to deploy a sensor pod inside an alien hive. However, you must find the alien hive, somewhere to the East. Before that, however, you must first repair your Trident, recently lost in a botched mission. To complete the void experience you will need to:\r\n\r\n-Fix your Trident by repairing holes, draining it, and powering it on.\r\n-Acquire power from thermal vents to recharge power cells or craft new ones..\r\n-Acquire resources to build the sensor pod, especially Axum Relics which are only found near points of interest.\r\n-Keep your sub from sinking.\r\n-Navigate a dangerous, hard-to-see region.",
+                        "image_url":  "images/Prototyping/Void/Textures/T_BiomassSignal.png"
+                    },
+                    {
+                        "id":  "DA_CameraStationTut",
+                        "subfolder":  "Prototypes/Prototyping/Void/Data/DatabankEntries",
+                        "title":  "Camer Station",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Void Prototype"
+                                       ],
+                        "body":  "The camera station allows you to swap between four cameras positioned on each side of the vessel. You can use them to look around, or press right click to turn on a light, which can be useful for exploring.",
+                        "image_url":  "images/Prototyping/Void/Textures/T_Trident_Camera.png"
+                    },
+                    {
+                        "id":  "DA_ControlStationTut",
+                        "subfolder":  "Prototypes/Prototyping/Void/Data/DatabankEntries",
+                        "title":  "Control Station",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Void Prototype"
+                                       ],
+                        "body":  "The controls are how you steer your Trident. WASD moves you, Spacebar ascends, and C descends. \r\n\r\nAdditionally, you can select speeds by clicking on the arrows on your ship\u0027s HUD. ",
+                        "image_url":  "images/Prototyping/Void/Textures/T_Trident_Controls.png"
+                    },
+                    {
+                        "id":  "DA_DrainageStationTut",
+                        "subfolder":  "Prototypes/Prototyping/Void/Data/DatabankEntries",
+                        "title":  "Drainage Station",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Void Prototype"
+                                       ],
+                        "body":  "Drainage Station",
+                        "image_url":  "images/External/UltraDynamicSky/Textures/Icons/Actor_Weather_State.png"
+                    },
+                    {
+                        "id":  "DA_EngineStationTut",
+                        "subfolder":  "Prototypes/Prototyping/Void/Data/DatabankEntries",
+                        "title":  "Engine Station",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Void Prototype"
+                                       ],
+                        "body":  "The engine station allows a player to control their ship\u0027s speed from the back of the vessel. It also allows for a player to fully turn off or on their engines with a single button press. ",
+                        "image_url":  "images/Prototyping/Void/Textures/T_Trident_Engines.png"
+                    },
+                    {
+                        "id":  "DA_MiningNode",
+                        "subfolder":  "Prototypes/Prototyping/Void/Data/DatabankEntries",
+                        "title":  "Mining Node",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Void Prototype"
+                                       ],
+                        "body":  "The mining site is where you can build a mining platform. Click on the white circle to place a ghost, then provide the necessary materials. \r\n\r\nOnce complete, the mining platform will accrue minerals overtime and automatically deposit them in an included storage.",
+                        "image_url":  "images/Prototyping/Void/Textures/T_MiningSite.png"
+                    },
+                    {
+                        "id":  "DA_OxygenatorTut",
+                        "subfolder":  "Prototypes/Prototyping/Void/Data/DatabankEntries",
+                        "title":  "Oxygenator",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Void Prototype"
+                                       ],
+                        "body":  "The oxygenator fills your trident with life-giving oxygen. Importantly, the filter can get dirty as the sub gets damaged. \r\n\r\nThe damage is represented as a perfect of the filter\u0027s life. If it gets too low oxygen will stop flowing.\r\n\r\nBe sure to periodically flush the filter using an EMT tool. ",
+                        "image_url":  "images/Prototyping/Void/Textures/T_Icon_OxygenFilter.png"
+                    },
+                    {
+                        "id":  "DA_PowerStationTut",
+                        "subfolder":  "Prototypes/Prototyping/Void/Data/DatabankEntries",
+                        "title":  "Power Station",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Void Prototype"
+                                       ],
+                        "body":  "The power station is where you store energy cells, the fuel that keeps your Trident moving. \r\n\r\nIf you want to increase your power, you can either add in more power cells (crafted at the fabricator), or you can find thermal vents and build energy recharging stations on them. \r\n\r\nLike many of the Trident\u0027s systems, be sure to make sure that the power station is properly maintained. Periodically you must use the EMT to realign the power flow otherwise your power cells will drain faster. Be sure to check it after you take damage. ",
+                        "image_url":  "images/Prototyping/Void/Textures/T_Trident_Power.png"
+                    },
+                    {
+                        "id":  "DA_ScannerStationTut",
+                        "subfolder":  "Prototypes/Prototyping/Void/Data/DatabankEntries",
+                        "title":  "Scanner Station",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Void Prototype"
+                                       ],
+                        "body":  "The scanner station allows you to track large or notable anomalies around the Trident. These show up as icons on the screen, often vaguely indicating what they can be used for or what they might have to offer. \r\n\r\nYou can click on a signal once you see it to display its current position and height difference from you, displayed in meters. \r\n\r\nYou will also need to periodically need to maintain the sensors with the EMT. To do this you will have to go outside the ship and rotate the two tuning points until the dish is back in alignment. If you fail to do this, the range, speed, and effectiveness of the scanner will depreciate. ",
+                        "image_url":  "images/Prototyping/Void/Textures/T_Trident_Scanner.png"
+                    },
+                    {
+                        "id":  "DA_SensorPodSite",
+                        "subfolder":  "Prototypes/Prototyping/Void/Data/DatabankEntries",
+                        "title":  "Sensor Pod Site",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Void Prototype"
+                                       ],
+                        "body":  "The sensor pod site allows you to click the white circle and initiate the building of a sensor pod -- your main mission in the Void. \r\n\r\nOnce the ghost of the object appears, add in the necessary materials to build the sensor pod and complete the void experience. ",
+                        "image_url":  "images/Prototyping/Void/Textures/T_SensorPodSite.png"
+                    },
+                    {
+                        "id":  "DA_ThermalVent",
+                        "subfolder":  "Prototypes/Prototyping/Void/Data/DatabankEntries",
+                        "title":  "Thermal Power Site",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Void Prototype"
+                                       ],
+                        "body":  "Using thermal vents, you can build a recharging station that will restore power to your Trident. \r\n\r\nClick on the white circle, creating the ghost of the thermal vent recharge station. Then provide the necessary materials to complete the project.\r\n\r\nOnce constructed, simply drive your Trident over the charger to restore power to all inserted power cells. ",
+                        "image_url":  "images/Prototyping/Void/Textures/T_ThermalVent.png"
+                    },
+                    {
+                        "id":  "DA_TractorBeamStationTut",
+                        "subfolder":  "Prototypes/Prototyping/Void/Data/DatabankEntries",
+                        "title":  "Tractor Beam",
+                        "categories":  [
+                                           "Prototypes (DEV/WIP Content - not ingame)",
+                                           "Void Prototype"
+                                       ],
+                        "body":  "The tractor beam is both a tool for pulling things into the ship and also your ship\u0027s primary hold. \r\n\r\nTo use the tractor beam right click and turn it on, then use the beam to pull in anything within range. Items will automatically be placed into your tractor beam\u0027s hold. You can also use it to pull players and creatures towards the ship. ",
+                        "image_url":  "images/Prototyping/Void/Textures/T_Trident_TractorBeam.png"
                     },
                     {
                         "id":  "DA_Acid_Find_DatabankEntry",
@@ -4494,7 +5045,7 @@
                         "subfolder":  "Resource",
                         "title":  "[PLACEHOLDER] Nutrient Block",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "[PLACEHOLDER] You don\u0027t want to know!",
                         "image_url":  "images/Utility/Editor/IconBaker/IconTextures/IconBaker_Sustenance/T_NutrientBlock_Icon.png"
@@ -4504,7 +5055,7 @@
                         "subfolder":  "Resource",
                         "title":  "Aero Cyst",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "[PLACEHOLDER] Is it air or is it liquid? Is it both? You never knew a cyst could taste this soft and fluffy. You might never have thought about eating a cyst...and yet, here you are. ",
                         "image_url":  null
@@ -4534,7 +5085,7 @@
                         "subfolder":  "Resource",
                         "title":  "Axum Data Cache",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "[PLACEHOLDER] A crystalline storage device constructued of an incredibly durable material. Inscrutable to our scanners, it still contains important information that the Crypters could use if they aim to rebuild.",
                         "image_url":  "images/Prototyping/Void/Textures/T_AxumDataCache.png"
@@ -4544,7 +5095,7 @@
                         "subfolder":  "Resource",
                         "title":  "Axum Relic",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "[PLACEHOLDER] Boxy and  quite heavy, it appears to be an organic material anodized with metal. A series of complex inscryptions cover the surface, with pictographs depicting a series of events on this alien world. Doubtless valuable to the survivors. ",
                         "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
@@ -4697,7 +5248,7 @@
                         "subfolder":  "Resource",
                         "title":  "Pudding Urchin",
                         "categories":  [
-
+                                           "Uncategorized"
                                        ],
                         "body":  "Pudding Urchin, or Urchin Pudding. It will hurt. But you\u0027ll remember the taste.",
                         "image_url":  "images/UI/Hud/Art/T_DefaultImage.png"
@@ -4826,17 +5377,6 @@
                         "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
                     },
                     {
-                        "id":  "DA_Ruins_BlackBox_Mel_DatabankEntry",
-                        "subfolder":  "Ruins",
-                        "title":  "Mel",
-                        "categories":  [
-                                           "Black Boxes",
-                                           "Colonists"
-                                       ],
-                        "body":  "Blackbox: Sansar, Melaku \"Mel\"\n\nParsing blackbox data. Outputting natural language report.\n\nMel asphyxiated. His air tanks were torn from his AEP suit by an attacker.\n\nMel died in the same incident as two coworkers.\n\nMel died about 236,000 hours ago.\n\nMel\u0027s blackbox transmitted him to a biobed in a nearby base camp. Mel was reprinted without a reset.\n\nMel\u0027s life continued.",
-                        "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
-                    },
-                    {
                         "id":  "DA_Ruins_BlackBox_Bio_Mel_DatabankEntry",
                         "subfolder":  "Ruins",
                         "title":  "Mel",
@@ -4845,6 +5385,17 @@
                                            "Colonists"
                                        ],
                         "body":  "Melaku \"Mel\" Sansar\n\nGender: M\n\nMission role: Survival specialist, celebrity sponsor\n\nPay rate: No pay.\n\nBiography: Survivor of Rakshasa expedition (after blackbox retrieval by Rauli Isotalo). Born in Kampung Bintang to Ethiopian parents, but changed name to Mongolian patronymic. Childhood friend of Udal Singh. Beloved entertainment personality due to long-suffering relationship with Rauli Isotalo. Emotionally evasive, capable of intense focus bordering on dissociation.\n\nNotes: RASA candidate.",
+                        "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
+                    },
+                    {
+                        "id":  "DA_Ruins_BlackBox_Mel_DatabankEntry",
+                        "subfolder":  "Ruins",
+                        "title":  "Mel",
+                        "categories":  [
+                                           "Black Boxes",
+                                           "Colonists"
+                                       ],
+                        "body":  "Blackbox: Sansar, Melaku \"Mel\"\n\nParsing blackbox data. Outputting natural language report.\n\nMel asphyxiated. His air tanks were torn from his AEP suit by an attacker.\n\nMel died in the same incident as two coworkers.\n\nMel died about 236,000 hours ago.\n\nMel\u0027s blackbox transmitted him to a biobed in a nearby base camp. Mel was reprinted without a reset.\n\nMel\u0027s life continued.",
                         "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
                     },
                     {
@@ -4929,17 +5480,6 @@
                         "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
                     },
                     {
-                        "id":  "DA_Ruins_BlackBox_Singh_04_DatabankEntry",
-                        "subfolder":  "Ruins",
-                        "title":  "Singh",
-                        "categories":  [
-                                           "Data Downloads",
-                                           "Black Boxes"
-                                       ],
-                        "body":  "Blackbox: Singh, Udal \"Singh\" 04\n\nParsing blackbox data. Outputting natural language report.\n\nSingh died of cervical dislocation. He was picked up and moved rapidly. Contralateral pressure was applied to his head and spine.\n\nSingh died alone.\n\nSingh died about 240,000 hours ago.\n\nSingh\u0027s blackbox transmitted him to a biobed in a nearby base camp. Despite elevated levels of contamination (particularly heavy metals and retroviral DNA), Singh was reprinted without a reset.\n\nSingh\u0027s life continued.",
-                        "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
-                    },
-                    {
                         "id":  "DA_Ruins_BlackBox_Bio_Singh_DatabankEntry",
                         "subfolder":  "Ruins",
                         "title":  "Singh",
@@ -4961,13 +5501,25 @@
                         "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
                     },
                     {
-                        "id":  "DA_Ruins_BlackBox_Bio_Tuba_DatabankEntry",
+                        "id":  "DA_Ruins_BlackBox_Singh_04_DatabankEntry",
+                        "subfolder":  "Ruins",
+                        "title":  "Singh",
+                        "categories":  [
+                                           "Data Downloads",
+                                           "Black Boxes"
+                                       ],
+                        "body":  "Blackbox: Singh, Udal \"Singh\" 04\n\nParsing blackbox data. Outputting natural language report.\n\nSingh died of cervical dislocation. He was picked up and moved rapidly. Contralateral pressure was applied to his head and spine.\n\nSingh died alone.\n\nSingh died about 240,000 hours ago.\n\nSingh\u0027s blackbox transmitted him to a biobed in a nearby base camp. Despite elevated levels of contamination (particularly heavy metals and retroviral DNA), Singh was reprinted without a reset.\n\nSingh\u0027s life continued.",
+                        "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
+                    },
+                    {
+                        "id":  "DA_Ruins_BlackBox_Tuba_01_DatabankEntry",
                         "subfolder":  "Ruins",
                         "title":  "Tuba",
                         "categories":  [
-                                           "Colonists"
+                                           "Data Downloads",
+                                           "Black Boxes"
                                        ],
-                        "body":  "T. \"Tuba\" Tobukha\n\nGender: F\n\nMission role: Cook, dietician\u0027s mate\n\nPay rate: Nökhör [frequently self-described as \"underpaid\"]\n\nBiography: Colony cook, highly proficient with both fabricator and traditional food preparation. Exposed to dangerous levels of heavy metals and retrovirus due to habit of sampling Protean substances for flavor. History of violence in the context of organized crime. Complains constantly, performs consistently.\n\nNotes: RASA candidate.",
+                        "body":  "Blackbox: T. \"Tuba\" Tobukha, 01\n\nParsing blackbox data. Outputting natural language report.\n\nTuba died of dehydration. She was cornered in a compartment by a marrowbreach outside.\n\nTuba died alone.\n\nTuba died about 235,000 hours ago.\n\nTuba\u0027s blackbox transmitted her to an unknown biobed. No return telemetry was received. \n\nTuba\u0027s status cannot be determined from this blackbox.",
                         "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
                     },
                     {
@@ -4982,14 +5534,13 @@
                         "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
                     },
                     {
-                        "id":  "DA_Ruins_BlackBox_Tuba_01_DatabankEntry",
+                        "id":  "DA_Ruins_BlackBox_Bio_Tuba_DatabankEntry",
                         "subfolder":  "Ruins",
                         "title":  "Tuba",
                         "categories":  [
-                                           "Data Downloads",
-                                           "Black Boxes"
+                                           "Colonists"
                                        ],
-                        "body":  "Blackbox: T. \"Tuba\" Tobukha, 01\n\nParsing blackbox data. Outputting natural language report.\n\nTuba died of dehydration. She was cornered in a compartment by a marrowbreach outside.\n\nTuba died alone.\n\nTuba died about 235,000 hours ago.\n\nTuba\u0027s blackbox transmitted her to an unknown biobed. No return telemetry was received. \n\nTuba\u0027s status cannot be determined from this blackbox.",
+                        "body":  "T. \"Tuba\" Tobukha\n\nGender: F\n\nMission role: Cook, dietician\u0027s mate\n\nPay rate: Nökhör [frequently self-described as \"underpaid\"]\n\nBiography: Colony cook, highly proficient with both fabricator and traditional food preparation. Exposed to dangerous levels of heavy metals and retrovirus due to habit of sampling Protean substances for flavor. History of violence in the context of organized crime. Complains constantly, performs consistently.\n\nNotes: RASA candidate.",
                         "image_url":  "images/UI/Materials_test/Glitch/T_UI_Alterra_LOgo.png"
                     },
                     {

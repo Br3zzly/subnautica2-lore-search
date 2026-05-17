@@ -61,13 +61,16 @@ script reads them via the `-FModelContent` / `-GameRoot` arguments.
 
 ## Update workflow (after every game patch)
 
-1. **Re-export entry text** in FModel.
-   Right-click `Subnautica2/Content/Data/DatabankEntry` →
-   *Save Folder's Packages Properties (.json)*.
-   The exports land under
-   `<FModel Output Dir>\Exports\Subnautica2\Content\Data\DatabankEntry`.
-   Subfolders like `Fauna/`, `Investigations/OpenInvestigations/` etc.
-   carry through and are used by the build script.
+1. **Re-export entry text** in FModel. For complete coverage (including
+   dev/WIP prototype entries), right-click `Subnautica2/Content` →
+   *Save Folder's Packages Properties (.json)*. The build script walks
+   the whole Content tree looking for any object with
+   `Type == "UWEDatabankEntry"`, so anything outside
+   `Data/DatabankEntry` (e.g. `Prototyping/Void/Data/DatabankEntries`,
+   `Data/Narrative/DatabankEntries`) gets picked up automatically and
+   grouped under a separate **Prototypes** root in the tree.
+   If you only want released content, exporting just
+   `Subnautica2/Content/Data/DatabankEntry` still works.
 
 2. **Re-export entry textures** in FModel — three folders cover ~99% of
    referenced images:
@@ -102,6 +105,14 @@ That's the full loop. New logs, renamed entries, new art — all flow through.
 - **ID collisions.** When two entries share an asset name (e.g. the two
   `Singh` investigations), the script appends the parent folder to the ID so
   they remain individually addressable.
+- **Prototypes root.** Any `UWEDatabankEntry` found outside
+  `Data/DatabankEntry` gets a synthetic root category prepended:
+  `Prototypes (DEV/WIP Content - not ingame)`. So dev/test entries are
+  visible but segregated from the released tree.
+- **Uncategorized root.** Released entries with an empty `Categories[]`
+  array (some `[PLACEHOLDER]` entries don't have categories set yet)
+  land under a synthetic `Uncategorized` root rather than rendering as
+  bare leaves at the top of the tree.
 - **Images.** `EntryImage.AssetPathName` is translated to a relative PNG
   path under `docs/images/`. The build script copies only the images
   referenced by some entry — the rest of the FModel export tree is left
