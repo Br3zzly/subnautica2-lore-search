@@ -1,9 +1,15 @@
 # Subnautica 2 — Databank Site
 
 Unofficial static site that lets people search and browse the in-game
-**Databank** entries (the "Logs" and "Database" tabs in Subnautica 2),
-plus **Item Descriptions** (every item's in-game name + description text,
-grouped by the same fabricator/builder/processor tabs the game uses).
+**Databank** entries (the "Database" tab in Subnautica 2),
+**Item Descriptions** (every item's in-game name + description text,
+grouped by the same fabricator/builder/processor tabs the game uses),
+**Logs** (the "Log" tab's audiologs + blackbox recordings, flattened
+into speaker-prefixed transcripts), **Dialogs** (catch-all view of
+every spoken `UWEDialogueSequence` in the game — barks, alerts,
+ambient NPCs, scan reactions, and deprecated OLD content), and
+**Axum Glyphs** (every logogram of the alien Axum script, with its
+meaning and the actual rendered glyph image).
 
 All content is extracted from the game's local files. No game files are
 redistributed — only the structured text data the player sees in-game.
@@ -67,23 +73,31 @@ script reads them via the `-FModelContent` / `-GameRoot` arguments.
    dev/WIP prototype entries), right-click `Subnautica2/Content` →
    *Save Folder's Packages Properties (.json)*. The build script walks
    the whole Content tree looking for objects with
-   `Type == "UWEDatabankEntry"` (databank pages) and
-   `Type == "UWEItemType"` (item descriptions), plus reading
-   `Data/CraftingRecipes/` to assemble the fabricator/builder tab
-   structure for the Item Descriptions tree. Anything outside
-   `Data/DatabankEntry` or `Data/ItemType` is picked up automatically
-   and grouped under a separate **Prototypes** root.
+   `Type == "UWEDatabankEntry"` (databank pages),
+   `Type == "UWEItemType"` (item descriptions),
+   `Type == "UWEDialogueSequence"` (logs / dialogs), and
+   `Type == "SN2AxumGlyphDataAsset"` (axum glyphs).
+   It also reads `Data/CraftingRecipes/` to assemble the
+   fabricator/builder tab structure for the Item Descriptions tree,
+   `Data/Narrative/Dialogue/SpeakingCharacters/` for log speaker names,
+   and `StringTables/` for log titles. Anything outside
+   `Data/DatabankEntry` / `Data/ItemType` / `Data/Narrative/AxumGlyphs`
+   is picked up automatically and grouped under a separate **Prototypes**
+   root.
    If you only want released content, exporting just
    `Subnautica2/Content/Data/DatabankEntry`,
-   `Subnautica2/Content/Data/ItemType`, and
-   `Subnautica2/Content/Data/CraftingRecipes` still works.
+   `Subnautica2/Content/Data/ItemType`,
+   `Subnautica2/Content/Data/CraftingRecipes`,
+   `Subnautica2/Content/Data/Narrative/Dialogue`,
+   `Subnautica2/Content/Data/Narrative/AxumGlyphs`, and
+   `Subnautica2/Content/StringTables` still works.
 
 2. **Re-export entry textures** in FModel — these folders cover ~99% of
    referenced images:
 
    | Right-click in FModel | What it gives you |
    |---|---|
-   | `Subnautica2/Content/UI/` → *Save Folder's Packages Textures* | UI icons, placeholders, Alterra logo |
+   | `Subnautica2/Content/UI/` → *Save Folder's Packages Textures* | UI icons, placeholders, Alterra logo, **Axum glyph PNGs** |
    | `Subnautica2/Content/Utility/Editor/IconBaker/` → same | Per-creature scan icons + item thumbnails (the real art) |
    | `Subnautica2/Content/Prototyping/Void/Textures/` → same | Axum / alien glyph placeholders |
    | `Subnautica2/Content/Blueprints/UI/Fabricator/Icons/` → same | Tadpole upgrade module icons (used by item descriptions) |
@@ -127,6 +141,30 @@ That's the full loop. New logs, renamed entries, new art — all flow through.
   sub-tree (e.g. `Fabricator / Sustenance / Cooked Food`). Otherwise
   (raw resources, creatures, deprecated items), the source subfolder
   under `Data/ItemType/` becomes the bucket.
+- **Logs root.** The curated subset of dialogue sequences that map to
+  the in-game Log tab. Two source patterns:
+  - **Audiologs** (`Data/Narrative/Dialogue/**/Audiolog*_Dialogue.json`)
+    grouped by area: `Coral Gardens`, `Ruins`, `Other`.
+  - **Black Boxes** (`*Blackbox*` files, excluding `*BlackBoxScan*`
+    scan-reaction PDA flavor) — flat bucket.
+  Each line becomes a `Speaker: text` paragraph; titles come from
+  matching `<base>_Title` / `<base>_title` keys in the referenced
+  StringTable.
+- **Dialogs root.** Catch-all containing every `UWEDialogueSequence`
+  in the Content tree (currently ~670 entries — base-voice barks,
+  alerts, ambient NPC chatter, scan reactions, death notifications,
+  deprecated OLD content). Subtree mirrors the source folder layout
+  relative to `Data/Narrative/Dialogue/`; root-level files are bucketed
+  by filename prefix. Audiologs and blackboxes also appear here (with
+  `dlg_` ID prefix) for completeness — Logs is the curated view, Dialogs
+  is the complete one.
+- **Axum Glyphs root.** Every `SN2AxumGlyphDataAsset` from
+  `Data/Narrative/AxumGlyphs/` (88 entries: 85 released logograms + 3
+  placeholder Test glyphs in a `Test` subcategory). Title is the
+  English meaning (e.g. "joy", "Karakorum", "Architects", or numerals
+  "1".."11" for the dedicated number glyphs); image is the rendered
+  PNG from `UI/UI_Assets/UI_Glyphs/Axum/`; body lists the unlock
+  requirement (usually scanning the Observatory Rosetta Stone).
 - **Images.** `EntryImage.AssetPathName` (databank) and
   `Thumbnail.AssetPathName` (items) are both translated to relative PNG
   paths under `docs/images/`. The build script copies only the images

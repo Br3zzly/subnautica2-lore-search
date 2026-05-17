@@ -315,6 +315,425 @@ foreach ($f in $files) {
     }) | Out-Null
 }
 
+# --- Logs (UWEDialogueSequence audiologs) pass ------------------------------
+# Audiolog dialogue files under Data/Narrative/Dialogue/**/Audiolog*_Dialogue
+# back the in-game "Log" tab. Each file is a sequence of speaker-attributed
+# spoken lines. We flatten the sequence into one entry per file under a
+# synthetic "Logs" root, grouped by area (Coral Gardens / Ruins / Other).
+
+# Speaker cache: SpeakingCharacters/DA_Character_<x>.json → display name.
+$speakerNames = @{}
+$speakerRoot = Join-Path $FModelContent 'Data\Narrative\Dialogue\SpeakingCharacters'
+if (Test-Path $speakerRoot) {
+    foreach ($sf in Get-ChildItem -Path $speakerRoot -Recurse -Filter *.json -File) {
+        try {
+            $sjson = [System.IO.File]::ReadAllText($sf.FullName) | ConvertFrom-Json
+        } catch { continue }
+        foreach ($so in $sjson) {
+            if ($so.Type -ne 'UWEDialogueSpeakingCharacter') { continue }
+            $displayName = Get-Text $so.Properties.Name
+            if (-not $displayName) { $displayName = $so.Name -replace '^DA_Character_','' }
+            $speakerNames[$so.Name] = $displayName
+        }
+    }
+}
+
+# StringTable cache. Built per-table because:
+#   1) PowerShell's default Hashtable is case-insensitive, but the source data
+#      uses BOTH "Audiolog_title" and "Audiolog_Title" (capital T, per-POI
+#      tables) as distinct conventions, so we use a case-sensitive Dictionary.
+#   2) The generic key "Audiolog_Title" appears in ~11 per-POI tables with a
+#      different value in each one. A flat global title index would collide.
+# Lookup strategy: first try the audiolog's own primary table (the one its
+# first line's TableId points at). Fall back to an "unambiguous global" sweep
+# (only used when exactly one table has the key), which handles the few cases
+# where titles live in a different table from their lines (e.g. Twins:
+# lines in ST_Databank_Audiologs_splits, title in ST_Databank_Audiologs).
+$tablesByName = @{}
+$strTablesRoot = Join-Path $FModelContent 'StringTables'
+if (Test-Path $strTablesRoot) {
+    foreach ($tf in Get-ChildItem -Path $strTablesRoot -Recurse -Filter *.json -File) {
+        try {
+            $tj = [System.IO.File]::ReadAllText($tf.FullName) | ConvertFrom-Json
+        } catch { continue }
+        foreach ($to in $tj) {
+            if ($to.Type -ne 'StringTable') { continue }
+            if (-not $to.StringTable -or -not $to.StringTable.KeysToEntries) { continue }
+            $d = New-Object 'System.Collections.Generic.Dictionary[String,String]' ([System.StringComparer]::Ordinal)
+            foreach ($prop in $to.StringTable.KeysToEntries.PSObject.Properties) {
+                $d[$prop.Name] = [string]$prop.Value
+            }
+            $tablesByName[$to.Name] = $d
+        }
+    }
+}
+
+function Try-TitleInTable {
+    param($table, [string]$base)
+    if (-not $table -or -not $base) { return $null }
+    foreach ($suffix in @('_Title', '_title')) {
+        $k = $base + $suffix
+        if ($table.ContainsKey($k)) { return $table[$k] }
+    }
+    return $null
+}
+
+# Derive candidate base names from the first line's StringTable key. Observed
+# in the wild:
+#   "Ruby_TadpoleOps_Line3"  → "Ruby_TadpoleOps"   (+ "_Title" / "_title")
+#   "Twins_Line1"            → "Twins"             (title in a sibling table)
+#   "Exodus_6_01_Ganz"       → "Exodus_6"
+#   "Audiolog_1"             → "Audiolog"          (per-POI tables)
+#   "Kurultai8_1_Sophie"     → no title key exists; falls back to humanized name
+function Get-AudiologTitle {
+    param([string]$lineKey, [string]$lineTableId, [string]$assetName)
+
+    $candidates = New-Object System.Collections.Generic.List[string]
+    if ($lineKey) {
+        $candidates.Add($lineKey) | Out-Null
+        foreach ($v in @(
+            ($lineKey -replace '_Line\d+$', ''),
+            ($lineKey -replace '_\d+_[A-Za-z]+$', ''),
+            ($lineKey -replace '_\d+$', '')
+        )) {
+            if ($v -and $v -ne $lineKey -and -not $candidates.Contains($v)) {
+                $candidates.Add($v) | Out-Null
+            }
+        }
+    }
+
+    # Same-table lookup first. Most reliable; resolves the Audiolog_Title
+    # collision case (each per-POI table has its own).
+    $primaryTable = $null
+    if ($lineTableId) {
+        $primaryName = ($lineTableId -split '\.')[-1]
+        if ($tablesByName.ContainsKey($primaryName)) {
+            $primaryTable = $tablesByName[$primaryName]
+        }
+    }
+    foreach ($c in $candidates) {
+        $hit = Try-TitleInTable $primaryTable $c
+        if ($hit) { return $hit }
+    }
+
+    # Global fallback, but only when exactly one table has the key. Otherwise
+    # we can't tell which value to use, and falling back to a humanized name
+    # is safer than picking arbitrarily.
+    foreach ($c in $candidates) {
+        foreach ($suffix in @('_Title', '_title')) {
+            $k = $c + $suffix
+            $hitVal = $null
+            $count = 0
+            foreach ($t in $tablesByName.Values) {
+                if ($t.ContainsKey($k)) {
+                    $hitVal = $t[$k]
+                    $count++
+                    if ($count -gt 1) { break }
+                }
+            }
+            if ($count -eq 1) { return $hitVal }
+        }
+    }
+
+    # Humanized fallback: strip wrapper suffixes, area prefix, and underscores.
+    $t = $assetName -replace '^DA_', '' `
+                    -replace '_Audiolog_Dialogue$', '' `
+                    -replace '_Dialogue$', '' `
+                    -replace '_Audiolog$', '' `
+                    -replace '^CoralGardens_', '' `
+                    -replace '^Ruins_', '' `
+                    -replace '_', ' '
+    return $t
+}
+
+# Build a "rendered" view of a dialogue sequence — body (one speaker-prefixed
+# paragraph per line) plus the first line's StringTable Key/TableId (used by
+# Get-AudiologTitle). Returns $null if the sequence yields no usable lines.
+function Get-DialogueRender {
+    param($seqProps)
+    if (-not $seqProps -or -not $seqProps.Lines) { return $null }
+    $bodyLines  = @()
+    $firstKey   = $null
+    $firstTable = $null
+    foreach ($ln in $seqProps.Lines) {
+        $text = Get-Text $ln.SpokenText
+        if (-not $text) { continue }
+        $speakerName = $null
+        if ($ln.Speaker -and $ln.Speaker.AssetPathName) {
+            $speakerAsset = ($ln.Speaker.AssetPathName -split '\.')[-1]
+            if ($speakerNames.ContainsKey($speakerAsset)) {
+                $speakerName = $speakerNames[$speakerAsset]
+            } else {
+                $speakerName = $speakerAsset -replace '^DA_Character_', ''
+            }
+        }
+        if ($speakerName) {
+            $bodyLines += "${speakerName}: $text"
+        } else {
+            $bodyLines += $text
+        }
+        if (-not $firstKey -and $ln.SpokenText -and $ln.SpokenText.Key) {
+            $firstKey   = $ln.SpokenText.Key
+            $firstTable = $ln.SpokenText.TableId
+        }
+    }
+    if ($bodyLines.Count -eq 0) { return $null }
+    return [PSCustomObject]@{
+        Body       = $bodyLines -join "`r`n`r`n"
+        FirstKey   = $firstKey
+        FirstTable = $firstTable
+    }
+}
+
+# Pre-parse every UWEDialogueSequence file once and cache (path, name, render).
+# Used by both the curated Logs pass and the catch-all Dialogs pass below so
+# we don't read+parse the same 700+ files twice.
+#
+# Identifier note: we use the file's basename (e.g. "DA_Foo_Dialogue") rather
+# than the inner $seq.Name as the canonical asset name. For typical hand-named
+# sequences they match, but ~15 "Random selector" dialogues have anonymous
+# auto-generated names like "UWEDialogueSequence_0" that collide across files.
+# The file basename is always unique per file.
+$dialogueRoot = Join-Path $FModelContent 'Data\Narrative\Dialogue'
+$dataRoot     = Join-Path $FModelContent 'Data'
+
+$parsedDialogues = New-Object System.Collections.Generic.List[object]
+foreach ($f in $files) {
+    try { $raw = [System.IO.File]::ReadAllText($f.FullName) } catch { continue }
+    if (-not $raw.Contains('UWEDialogueSequence')) { continue }
+    try { $json = $raw | ConvertFrom-Json } catch { continue }
+    $seq = $json | Where-Object { $_.Type -eq 'UWEDialogueSequence' } | Select-Object -First 1
+    if (-not $seq) { continue }
+    $render = Get-DialogueRender $seq.Properties
+    if (-not $render) { continue }
+    $parsedDialogues.Add([PSCustomObject]@{
+        File     = $f
+        AssetId  = $f.BaseName
+        Render   = $render
+        IsInData = $f.FullName.StartsWith($dataRoot, [System.StringComparison]::OrdinalIgnoreCase)
+    }) | Out-Null
+}
+
+# --- Logs pass (curated) ----------------------------------------------------
+# Two source subsets feed the in-game Log tab:
+#   1) Audiologs: `*Audiolog*_Dialogue` under Data/Narrative/Dialogue/. Area
+#      sub-bucket is derived from the top-level folder (Coral Gardens / Ruins
+#      / Other).
+#   2) Blackboxes: `*Blackbox*` files (but NOT *BlackBoxScan* — those are
+#      BrokenPDA scan reactions, not actual recordings). Grouped together
+#      under "Black Boxes" regardless of source folder.
+foreach ($pd in $parsedDialogues) {
+    $f = $pd.File
+    if (-not $f.FullName.StartsWith($dialogueRoot, [System.StringComparison]::OrdinalIgnoreCase)) { continue }
+
+    $isAudiolog = $f.Name -match 'Audiolog.*_Dialogue.*\.json$'
+    $isBlackbox = ($f.Name -match 'Blackbox') -and ($f.Name -notmatch 'BlackBoxScan')
+    if (-not ($isAudiolog -or $isBlackbox)) { continue }
+
+    $title = Get-AudiologTitle $pd.Render.FirstKey $pd.Render.FirstTable $pd.AssetId
+
+    if ($isAudiolog) {
+        # Area = top-level folder under Data/Narrative/Dialogue.
+        $rel   = $f.FullName.Substring($dialogueRoot.Length).TrimStart('\','/')
+        $parts = $rel -split '[\\/]'
+        if ($parts.Count -gt 1) {
+            $top = $parts[0]
+            switch ($top) {
+                'CoralGardens' { $area = 'Coral Gardens' }
+                'Ruins'        { $area = 'Ruins' }
+                default        { $area = $top }
+            }
+        } else {
+            $area = 'Other'
+        }
+        $cats = @('Logs', $area)
+        $subfolderParts = @()
+        if ($parts.Count -gt 1) { $subfolderParts = @($parts[0..($parts.Count - 2)]) }
+        $subfolder    = if ($subfolderParts.Count -gt 0) { 'Logs/' + ($subfolderParts -join '/') } else { 'Logs' }
+        $parentFolder = if ($subfolderParts.Count -gt 0) { $subfolderParts[-1] } else { '' }
+    } else {
+        # Blackboxes: single flat bucket.
+        $cats         = @('Logs', 'Black Boxes')
+        $subfolder    = 'Logs/Black Boxes'
+        $parentFolder = 'Black Boxes'
+    }
+
+    $entries.Add([PSCustomObject]@{
+        id           = $pd.AssetId
+        subfolder    = $subfolder
+        parentFolder = $parentFolder
+        title        = $title
+        categories   = $cats
+        body         = $pd.Render.Body
+        imageRel     = $null
+    }) | Out-Null
+}
+
+# Title collision pass for Logs only. A handful of stub audiologs reuse a
+# single line from another audiolog's content (e.g. Jubilee0/Jubilee1 only
+# contain one line borrowed from Exodus_2), which means they legitimately
+# resolve to the same _Title in the source data. Disambiguate by suffixing
+# the humanized asset name so each tree leaf is distinguishable.
+$logEntries = $entries | Where-Object { $_.categories -and $_.categories[0] -eq 'Logs' }
+$titleGroups = $logEntries | Group-Object title | Where-Object { $_.Count -gt 1 }
+foreach ($g in $titleGroups) {
+    foreach ($e in $g.Group) {
+        $shortName = $e.id -replace '^DA_', '' `
+                           -replace '_Audiolog_Dialogue$', '' `
+                           -replace '_Dialogue$', '' `
+                           -replace '^CoralGardens_', '' `
+                           -replace '^Ruins_', '' `
+                           -replace '_', ' '
+        $e.title = "$($e.title) ($shortName)"
+    }
+}
+
+# --- Dialogs pass (catch-all) -----------------------------------------------
+# Every UWEDialogueSequence in the entire Content tree gets an entry under a
+# "Dialogs" root, so the site is a complete reference for every spoken line —
+# not just the curated Logs set. Anything outside Data/ is grouped under the
+# Prototypes root the same way Databank and Item entries are.
+#
+# Sub-tree derivation:
+#   - Under Data/Narrative/Dialogue/: use the relative folder path after the
+#     dialogue root. Root-level files (no subfolder) are bucketed by filename
+#     prefix to avoid 287 flat leaves — DA_Dialogue_<X>_* → "Dialogue / <X>",
+#     DA_<X>_* → "<X>", with X taken from the asset name.
+#   - Under Data/ but outside Dialogue/: relative path from Data/.
+#   - Outside Data/: relative path from Content/, under the Prototypes root.
+#
+# IDs are prefixed with "dlg_" so the same audiolog file can live in both
+# Logs and Dialogs without the ID dedup logic mangling either copy.
+function Get-RootDialogBucket {
+    param([string]$assetName)
+    $n = $assetName -replace '^DA_', ''
+    $parts = $n -split '_'
+    if ($parts.Count -eq 0 -or -not $parts[0]) { return @() }
+    # DA_Dialogue_<X>_* → ["Dialogue", "<X>"], else just first segment.
+    if ($parts[0] -eq 'Dialogue' -and $parts.Count -ge 2 -and $parts[1]) {
+        return @('Dialogue', $parts[1])
+    }
+    return @($parts[0])
+}
+
+foreach ($pd in $parsedDialogues) {
+    $f = $pd.File
+    $rel = $f.FullName.Substring($FModelContent.Length).TrimStart('\','/')
+    $parts = $rel -split '[\\/]'
+
+    if ($pd.IsInData) {
+        $cats = @('Dialogs')
+        if ($f.FullName.StartsWith($dialogueRoot, [System.StringComparison]::OrdinalIgnoreCase)) {
+            # Strip "Data\Narrative\Dialogue\" prefix.
+            $dialogRel   = $f.FullName.Substring($dialogueRoot.Length).TrimStart('\','/')
+            $dialogParts = $dialogRel -split '[\\/]'
+            if ($dialogParts.Count -gt 1) {
+                $cats += @($dialogParts[0..($dialogParts.Count - 2)])
+            } else {
+                # Root-level: bucket by filename prefix.
+                $cats += (Get-RootDialogBucket $pd.AssetId)
+            }
+        } else {
+            # Other Data/ subtree — use everything after "Data\".
+            if ($parts.Count -gt 2) { $cats += @($parts[1..($parts.Count - 2)]) }
+        }
+    } else {
+        # Prototype: outside Data/. Tag with the Prototypes root then folder chain.
+        $cats = @('Prototypes (DEV/WIP Content - not ingame)', 'Dialogs')
+        if ($parts.Count -gt 1) { $cats += @($parts[0..($parts.Count - 2)]) }
+    }
+
+    $subfolderParts = if ($parts.Count -gt 1) { @($parts[0..($parts.Count - 2)]) } else { @() }
+    $subfolder = if ($subfolderParts.Count -gt 0) { 'Dialogs/' + ($subfolderParts -join '/') } else { 'Dialogs' }
+    $parentFolder = if ($subfolderParts.Count -gt 0) { $subfolderParts[-1] } else { '' }
+
+    # Title: try the StringTable _Title/_title machinery; fallback humanizes
+    # the asset name (the same fallback Get-AudiologTitle uses).
+    $title = Get-AudiologTitle $pd.Render.FirstKey $pd.Render.FirstTable $pd.AssetId
+
+    $entries.Add([PSCustomObject]@{
+        id           = 'dlg_' + $pd.AssetId
+        subfolder    = $subfolder
+        parentFolder = $parentFolder
+        title        = $title
+        categories   = $cats
+        body         = $pd.Render.Body
+        imageRel     = $null
+    }) | Out-Null
+}
+
+# --- Axum Glyphs (SN2AxumGlyphDataAsset) pass -------------------------------
+# Each file is a single logogram from the in-game Axum script: a Word FText
+# (the glyph's meaning, e.g. "joy", "Karakorum"), a GlyphTexture (the actual
+# rendered glyph PNG), and an UnlockRule (usually "scan the Rosetta Stone").
+# Released glyphs live under Data/Narrative/AxumGlyphs/; the three Test/
+# files use placeholder textures and get a "Test" subcategory. Anything
+# outside Data/ goes under the Prototypes root (currently none, but the
+# branch is here for forward-compat).
+$glyphReleasedRoot = Join-Path $FModelContent 'Data\Narrative\AxumGlyphs'
+$glyphTestRoot     = Join-Path $glyphReleasedRoot 'Test'
+
+foreach ($f in $files) {
+    try { $raw = [System.IO.File]::ReadAllText($f.FullName) } catch { continue }
+    if (-not $raw.Contains('SN2AxumGlyphDataAsset')) { continue }
+    try { $json = $raw | ConvertFrom-Json } catch { continue }
+
+    $glyph = $json | Where-Object { $_.Type -eq 'SN2AxumGlyphDataAsset' } | Select-Object -First 1
+    if (-not $glyph -or -not $glyph.Properties) { continue }
+    $p = $glyph.Properties
+
+    $word = Get-Text $p.Word
+    if (-not $word) { $word = $glyph.Name }
+
+    # Body: unlock requirement. Most glyphs unlock when you fully scan the
+    # Observatory Rosetta Stone, so noting that is small but useful.
+    $body = ''
+    if ($p.UnlockRule -and $p.UnlockRule.EventAsset -and $p.UnlockRule.EventAsset.ObjectName) {
+        $eventType  = if ($p.UnlockRule.EventType) {
+            ($p.UnlockRule.EventType -replace '^ERecipeEventTypes::', '')
+        } else { 'Unknown' }
+        # ObjectName format: "UWEScanData'DA_Observatory_RosettaStone_ScanData'"
+        $eventAsset = $p.UnlockRule.EventAsset.ObjectName -replace "^[^']+'", '' -replace "'$", ''
+        $body = "Unlock: $eventType of $eventAsset"
+    }
+
+    $imageRel = $null
+    if ($p.GlyphTexture -and $p.GlyphTexture.AssetPathName) {
+        $imageRel = Convert-AssetPathToRelative $p.GlyphTexture.AssetPathName
+    }
+
+    # NOTE: assign $cats with explicit statements, not an `if`-expression.
+    # PowerShell unwraps a single-element array when it's the value of a
+    # conditional expression — `$x = if (…) { @('one') }` yields a string,
+    # which then ConvertTo-Json serialises as a scalar instead of a 1-element
+    # array. Same trap applies anywhere else we build a categories list.
+    $isReleased = $f.FullName.StartsWith($dataRoot, [System.StringComparison]::OrdinalIgnoreCase)
+    $isTest     = $f.FullName.StartsWith($glyphTestRoot, [System.StringComparison]::OrdinalIgnoreCase)
+    if ($isReleased -and $isTest) {
+        $cats = @('Axum Glyphs', 'Test')
+    } elseif ($isReleased) {
+        $cats = @('Axum Glyphs')
+    } else {
+        $cats = @('Prototypes (DEV/WIP Content - not ingame)', 'Axum Glyphs')
+    }
+
+    $rel   = $f.FullName.Substring($FModelContent.Length).TrimStart('\','/')
+    $parts = $rel -split '[\\/]'
+    $subfolderParts = if ($parts.Count -gt 1) { @($parts[0..($parts.Count - 2)]) } else { @() }
+    $subfolder    = if ($subfolderParts.Count -gt 0) { 'Axum Glyphs/' + ($subfolderParts -join '/') } else { 'Axum Glyphs' }
+    $parentFolder = if ($subfolderParts.Count -gt 0) { $subfolderParts[-1] } else { '' }
+
+    $entries.Add([PSCustomObject]@{
+        id           = $f.BaseName
+        subfolder    = $subfolder
+        parentFolder = $parentFolder
+        title        = $word
+        categories   = $cats
+        body         = $body
+        imageRel     = $imageRel
+    }) | Out-Null
+}
+
 # Disambiguate any ID collisions (e.g. Investigations/{Open,Closed}/Singh share
 # the same asset name). Append the parent folder so each ID is unique while
 # keeping non-colliding IDs clean.
