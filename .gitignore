@@ -4,6 +4,9 @@ version.json
 version.txt
 *.usmap
 
+# Claude Code project context (local only)
+CLAUDE.md
+
 # IDE / editor
 .vscode/
 .idea/
