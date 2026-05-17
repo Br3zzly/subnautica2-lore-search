@@ -1,18 +1,12 @@
-# Subnautica 2 — Databank Site
+# Subnautica 2 — Lore Search
+Static site that lets you search lore relevant text from the game:
+- All Databank entries (the "Databank" tab ingame)
+- All Logs entries (the "Log" tab ingame + blackbox recordings, flattened into speaker-prefixed transcripts)
+- All Item Descriptions
+- All Dialogs (barks, alerts, ambient NPCs, scan reactions, and deprecated OLD content)
+- All Axum Glyphs (Meaning + glyph image).
 
-Unofficial static site that lets people search and browse the in-game
-**Databank** entries (the "Database" tab in Subnautica 2),
-**Item Descriptions** (every item's in-game name + description text,
-grouped by the same fabricator/builder/processor tabs the game uses),
-**Logs** (the "Log" tab's audiologs + blackbox recordings, flattened
-into speaker-prefixed transcripts), **Dialogs** (catch-all view of
-every spoken `UWEDialogueSequence` in the game — barks, alerts,
-ambient NPCs, scan reactions, and deprecated OLD content), and
-**Axum Glyphs** (every logogram of the alien Axum script, with its
-meaning and the actual rendered glyph image).
-
-All content is extracted from the game's local files. No game files are
-redistributed — only the structured text data the player sees in-game.
+Also contains Prototype content that is not currently in the game.
 
 ## Cheat sheet
 
