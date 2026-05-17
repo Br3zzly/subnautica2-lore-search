@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Subnautica 2 — Databank</title>
+    <meta name="description" content="Searchable databank entries extracted from Subnautica 2 (Early Access).">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrap">
+            <h1>Databank</h1>
+            <p class="tagline">Unofficial searchable index of in-game databank entries. Data extracted from the game files; lore credit belongs to <a href="https://unknownworlds.com/" target="_blank" rel="noopener">Unknown Worlds</a>.</p>
+            <p class="meta" id="meta">Loading…</p>
+        </div>
+    </header>
+
+    <section class="controls">
+        <div class="wrap">
+            <input id="search" type="search" placeholder='Search title, body, or category…  (use "quotes" for exact phrase)' autocomplete="off" spellcheck="false">
+            <div class="filters">
+                <button id="expand-all"   type="button" class="link-btn">Expand all</button>
+                <button id="collapse-all" type="button" class="link-btn">Collapse all</button>
+                <span class="result-count" id="result-count"></span>
+            </div>
+        </div>
+    </section>
+
+    <main class="wrap">
+        <ul id="tree" class="tree"></ul>
+        <p id="empty" class="empty" hidden>No entries match.</p>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <p>Built from Subnautica 2 game files. Not affiliated with Unknown Worlds or Krafton. Source data is © Unknown Worlds.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/minisearch@6/dist/umd/index.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

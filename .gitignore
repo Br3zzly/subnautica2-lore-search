@@ -1,0 +1,13 @@
+# Local FModel exports — kept outside the repo
+DatabankEntry/
+version.json
+version.txt
+*.usmap
+
+# IDE / editor
+.vscode/
+.idea/
+
+# OS junk
+.DS_Store
+Thumbs.db
