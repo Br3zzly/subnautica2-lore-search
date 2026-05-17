@@ -118,22 +118,6 @@ That's the full loop. New logs, renamed entries, new art — all flow through.
   referenced by some entry — the rest of the FModel export tree is left
   alone. Entries whose referenced image isn't on disk render text-only.
 
-## How the search works
-
-Plain case-insensitive substring matching, run client-side over title +
-body + categories. No fuzzy / typo tolerance — what you type is what gets
-matched, character for character.
-
-- **Single word:** `anna` matches any entry containing the literal letters
-  "anna" (so it finds the name "Anna" but also "wanna", "Annabelle", etc.).
-  `ynna` finds nothing.
-- **Multiple words:** OR-combined. `anna is going` matches any entry
-  containing "anna" *or* "is" *or* "going".
-- **Quoted phrase:** `"anna is going"` matches only entries containing
-  that exact substring, spaces and all.
-
-No server, no analytics, no tracking.
-
 ## Credits & legal
 
 All databank text and images are © Unknown Worlds Entertainment / Krafton.
