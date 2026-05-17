@@ -107,22 +107,21 @@ That's the full loop. New logs, renamed entries, new art — all flow through.
   referenced by some entry — the rest of the FModel export tree is left
   alone. Entries whose referenced image isn't on disk render text-only.
 
-## GitHub Pages setup
-
-1. Push this repo to GitHub.
-2. Repo → **Settings → Pages**.
-3. *Source*: **Deploy from a branch**.
-4. *Branch*: `main` (or whatever you push to), **/ folder**: `/docs`.
-5. Save. First deploy takes a minute or two; your site appears at
-   `https://<your-username>.github.io/<repo-name>/`.
-
 ## How the search works
 
-Client-side, via [MiniSearch](https://github.com/lucaong/minisearch) loaded
-from a CDN. Title matches are weighted highest, then categories, then body.
-Prefix and small-typo (fuzzy) matching are on by default. Quoted `"phrase"`
-queries do exact-substring matches across title/body/categories. No server,
-no analytics, no tracking.
+Plain case-insensitive substring matching, run client-side over title +
+body + categories. No fuzzy / typo tolerance — what you type is what gets
+matched, character for character.
+
+- **Single word:** `anna` matches any entry containing the literal letters
+  "anna" (so it finds the name "Anna" but also "wanna", "Annabelle", etc.).
+  `ynna` finds nothing.
+- **Multiple words:** OR-combined. `anna is going` matches any entry
+  containing "anna" *or* "is" *or* "going".
+- **Quoted phrase:** `"anna is going"` matches only entries containing
+  that exact substring, spaces and all.
+
+No server, no analytics, no tracking.
 
 ## Credits & legal
 

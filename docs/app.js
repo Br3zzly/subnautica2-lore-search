@@ -12,7 +12,6 @@
     };
 
     let data = null;
-    let mini = null;
     let tree = null;                  // Root tree node
     const expandedNodes  = new Set(); // Category paths currently expanded
     const expandedEntries = new Set();// Entry IDs currently expanded inline
@@ -37,9 +36,11 @@
         return escaped.replace(new RegExp(`(${pattern})`, 'gi'), '<mark>$1</mark>');
     }
 
-    // Splits a raw query into quoted phrases (exact substring) and bare words
-    // (fuzzy AND-matched). E.g. `"sync biobed" angel` -> phrases: ["sync
-    // biobed"], words: ["angel"].
+    // Splits a raw query into quoted phrases and bare words. Both are matched
+    // the same way (case-insensitive substring); the only difference is that
+    // a quoted phrase keeps its internal whitespace, while bare words split
+    // on whitespace. E.g. `"anna is going" angel` -> phrases: ["anna is
+    // going"], words: ["angel"]. Each term is OR-combined against entries.
     function parseQuery(raw) {
         const phrases = [];
         const cleaned = raw.replace(/"([^"]+)"/g, (_, p) => {
@@ -121,51 +122,22 @@
         // Returns a Set of entry IDs matching the current search. When query
         // is empty, returns null meaning "no filter — show everything".
         //
-        // Quoted phrases match as case-insensitive substrings across title,
-        // body, and categories. Unquoted words go through MiniSearch with
-        // OR combination + fuzzy + prefix, so each word independently widens
-        // the result set. When both are present, phrase matches narrow the
-        // word results.
+        // Every term (quoted phrase or bare word) is a case-insensitive
+        // substring check against title + body + categories. Terms are
+        // OR-combined: an entry matches if any term is contained in its
+        // searchable text. No fuzzy, no typo tolerance.
         if (!query) return null;
         const { phrases, words } = parseQuery(query);
-        if (!phrases.length && !words.length) return null;
+        const terms = phrases.concat(words).map(t => t.toLowerCase());
+        if (!terms.length) return null;
 
-        let candidates;
-        if (words.length) {
-            const hits = mini.search(words.join(' '), {
-                // Prefix match needs at least 2 chars to be useful.
-                prefix: term => term.length >= 2,
-                // Fuzzy is meaningless for very short terms — fuzzy: 0.2 on a
-                // 3-letter query yields edit-distance 1, so "asd" matches
-                // "and", "ask", "add", ... and explodes the result set. Only
-                // enable fuzzy once we have enough letters to constrain it.
-                fuzzy: term => term.length >= 4 ? 0.2 : false,
-            });
-            candidates = new Set(hits.map(h => h.id));
-        } else {
-            // Phrase-only query — start with everything and filter below.
-            candidates = new Set(data.entries.map(e => e.id));
-        }
-
-        if (phrases.length) {
-            const lowerPhrases = phrases.map(p => p.toLowerCase());
-            const filtered = new Set();
-            for (const id of candidates) {
-                const e = data.entriesById.get(id);
-                if (!e) continue;
-                const haystack = (
-                    e.title + ' ' +
-                    (e.body || '') + ' ' +
-                    (e.categories || []).join(' ')
-                ).toLowerCase();
-                if (lowerPhrases.every(p => haystack.includes(p))) {
-                    filtered.add(id);
-                }
+        const out = new Set();
+        for (const e of data.entries) {
+            if (terms.some(t => e._haystack.includes(t))) {
+                out.add(e.id);
             }
-            candidates = filtered;
         }
-
-        return candidates;
+        return out;
     }
 
     // Walk the tree and mark which nodes have at least one visible entry
@@ -391,28 +363,22 @@
         data = payload;
         data.entriesById = new Map(data.entries.map(e => [e.id, e]));
 
+        // Precompute a lowercase searchable blob per entry so each keystroke
+        // doesn't re-lowercase the whole corpus.
+        for (const e of data.entries) {
+            e._haystack = (
+                e.title + ' ' +
+                (e.body || '') + ' ' +
+                (e.categories || []).join(' ')
+            ).toLowerCase();
+        }
+
         const meta = [
             `${data.total} entries`,
             data.game_build ? `Build ${data.game_build}` : null,
             data.generated_at ? `Generated ${data.generated_at.slice(0, 10)}` : null,
         ].filter(Boolean).join(' · ');
         els.meta.textContent = meta;
-
-        mini = new MiniSearch({
-            fields: ['title', 'body', 'categories'],
-            storeFields: ['id'],
-            searchOptions: {
-                boost: { title: 4, categories: 2 },
-                prefix: true,
-                fuzzy: 0.2,
-            },
-            extractField: (doc, field) => {
-                const v = doc[field];
-                if (Array.isArray(v)) return v.join(' ');
-                return v == null ? '' : String(v);
-            },
-        });
-        mini.addAll(data.entries);
 
         tree = buildTree(data.entries);
 
