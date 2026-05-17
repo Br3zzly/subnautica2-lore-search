@@ -159,6 +159,162 @@ foreach ($f in $files) {
     }) | Out-Null
 }
 
+# --- Item descriptions (UWEItemType) pass -----------------------------------
+# Items go under a synthetic "Item Descriptions" root. When an item is the
+# output of a crafting recipe, we use that recipe's category tree (e.g.
+# "Fabricator / Sustenance / Cooked Food") so the in-app tree mirrors the
+# in-game fabricator tabs. Items without a recipe (raw resources, creatures,
+# deprecated, etc.) fall back to their source subfolder under Data/ItemType.
+
+# Load the crafting category definitions so we can resolve a recipe's
+# Category asset → display-name path.
+$categoryDefs = @{}
+$categoryRoot = Join-Path $FModelContent 'Data\CraftingRecipes\Categories'
+if (Test-Path $categoryRoot) {
+    foreach ($cf in Get-ChildItem -Path $categoryRoot -Recurse -Filter *.json -File) {
+        try {
+            $cjson = [System.IO.File]::ReadAllText($cf.FullName) | ConvertFrom-Json
+        } catch { continue }
+        foreach ($co in $cjson) {
+            if ($co.Type -ne 'UWECraftingRecipeCategory') { continue }
+            $parent = $null
+            if ($co.Properties.PSObject.Properties['ParentCategory'] -and
+                $co.Properties.ParentCategory -and
+                $co.Properties.ParentCategory.AssetPathName) {
+                $parent = ($co.Properties.ParentCategory.AssetPathName -split '\.')[-1]
+            }
+            $display = Get-Text $co.Properties.Name
+            if (-not $display) { $display = $co.Name }
+            $categoryDefs[$co.Name] = @{ Display = $display; Parent = $parent }
+        }
+    }
+}
+
+function Get-RecipeCategoryPath($name) {
+    if (-not $name -or -not $categoryDefs.ContainsKey($name)) { return @() }
+    $path = @($categoryDefs[$name].Display)
+    $p = $categoryDefs[$name].Parent
+    $guard = 0
+    while ($p -and $categoryDefs.ContainsKey($p) -and $guard -lt 16) {
+        $path = ,$categoryDefs[$p].Display + $path
+        $p = $categoryDefs[$p].Parent
+        $guard++
+    }
+    return ,$path
+}
+
+# Build ItemType-asset-name → recipe-category-asset-name. An item that is
+# the Output of any recipe inherits that recipe's Category. First match wins.
+$itemToRecipeCategory = @{}
+$recipeRoot = Join-Path $FModelContent 'Data\CraftingRecipes'
+if (Test-Path $recipeRoot) {
+    $recipeFiles = Get-ChildItem -Path $recipeRoot -Recurse -Filter *.json -File |
+        Where-Object { $_.FullName -notmatch '[\\/]Categories[\\/]' }
+    foreach ($rf in $recipeFiles) {
+        try {
+            $rraw = [System.IO.File]::ReadAllText($rf.FullName)
+        } catch { continue }
+        if (-not $rraw.Contains('UWECraftingRecipe')) { continue }
+        try { $rjson = $rraw | ConvertFrom-Json } catch { continue }
+        foreach ($ro in $rjson) {
+            if ($ro.Type -ne 'UWECraftingRecipe') { continue }
+            $cat = $null
+            if ($ro.Properties.PSObject.Properties['Category'] -and
+                $ro.Properties.Category -and
+                $ro.Properties.Category.AssetPathName) {
+                $cat = ($ro.Properties.Category.AssetPathName -split '\.')[-1]
+            }
+            if (-not $cat) { continue }
+            if (-not ($ro.Properties.PSObject.Properties['Output'] -and $ro.Properties.Output)) { continue }
+            foreach ($out in $ro.Properties.Output) {
+                if (-not ($out.ItemType -and $out.ItemType.AssetPathName)) { continue }
+                $itemName = ($out.ItemType.AssetPathName -split '\.')[-1]
+                if ($itemName -and -not $itemToRecipeCategory.ContainsKey($itemName)) {
+                    $itemToRecipeCategory[$itemName] = $cat
+                }
+            }
+        }
+    }
+}
+
+# Released ItemTypes live under Data\ItemType; anything else is a prototype
+# (same convention as databank entries).
+$itemReleasedRoot = Join-Path $FModelContent 'Data\ItemType'
+
+foreach ($f in $files) {
+    try {
+        $raw = [System.IO.File]::ReadAllText($f.FullName)
+    } catch { continue }
+    if (-not $raw.Contains('UWEItemType')) { continue }
+    try { $json = $raw | ConvertFrom-Json } catch { continue }
+
+    $entry = $json | Where-Object { $_.Type -eq 'UWEItemType' } | Select-Object -First 1
+    if (-not $entry) { continue }
+    $p = $entry.Properties
+    if (-not $p) { continue }
+
+    $title = $null
+    if ($p.PSObject.Properties['Name']) { $title = Get-Text $p.Name }
+    if (-not $title) { $title = $entry.Name }
+
+    $body = ''
+    if ($p.PSObject.Properties['ItemDescription']) {
+        $t = Get-Text $p.ItemDescription
+        if ($t) { $body = $t }
+    }
+
+    $isReleasedItem = $f.FullName.StartsWith($itemReleasedRoot, [System.StringComparison]::OrdinalIgnoreCase)
+
+    # Path of the file relative to whichever root applies, used both for the
+    # subfolder field (UI breadcrumb) and as a fallback category source.
+    if ($isReleasedItem) {
+        $rel = $f.FullName.Substring($itemReleasedRoot.Length).TrimStart('\','/')
+    } else {
+        $rel = $f.FullName.Substring($FModelContent.Length).TrimStart('\','/')
+    }
+    $parts = $rel -split '[\\/]'
+    $subfolderParts = @()
+    if ($parts.Count -gt 1) { $subfolderParts = @($parts[0..($parts.Count - 2)]) }
+
+    # Categories chain. Starts with "Item Descriptions"; gets either the
+    # recipe category path (if this item is crafted) or the source subfolder
+    # path. Released-and-not-crafted items at the root of Data/ItemType land
+    # in a synthetic "Uncategorized" bucket so they aren't bare leaves.
+    $itemCats = @('Item Descriptions')
+    $recipeCat = $itemToRecipeCategory[$entry.Name]
+    if ($isReleasedItem -and $recipeCat) {
+        $itemCats += (Get-RecipeCategoryPath $recipeCat)
+    } elseif ($subfolderParts.Count -gt 0) {
+        $itemCats += $subfolderParts
+    } elseif ($isReleasedItem) {
+        $itemCats += 'Uncategorized'
+    }
+    if (-not $isReleasedItem) {
+        $itemCats = @('Prototypes (DEV/WIP Content - not ingame)') + $itemCats
+    }
+
+    $subfolder = if ($subfolderParts.Count -gt 0) { $subfolderParts -join '/' } else { 'General' }
+    if (-not $isReleasedItem) { $subfolder = "Prototypes/$subfolder" }
+    $parentFolder = if ($subfolderParts.Count -gt 0) { $subfolderParts[-1] } else { '' }
+
+    # Thumbnail.AssetPathName → relative texture path under docs/images/.
+    $imageRel = $null
+    if ($p.PSObject.Properties['Thumbnail'] -and $p.Thumbnail -and
+        $p.Thumbnail.PSObject.Properties['AssetPathName']) {
+        $imageRel = Convert-AssetPathToRelative $p.Thumbnail.AssetPathName
+    }
+
+    $entries.Add([PSCustomObject]@{
+        id           = $entry.Name
+        subfolder    = $subfolder
+        parentFolder = $parentFolder
+        title        = $title
+        categories   = $itemCats
+        body         = $body
+        imageRel     = $imageRel
+    }) | Out-Null
+}
+
 # Disambiguate any ID collisions (e.g. Investigations/{Open,Closed}/Singh share
 # the same asset name). Append the parent folder so each ID is unique while
 # keeping non-colliding IDs clean.

@@ -1,7 +1,9 @@
 # Subnautica 2 — Databank Site
 
 Unofficial static site that lets people search and browse the in-game
-**Databank** entries (the "Logs" and "Database" tabs in Subnautica 2).
+**Databank** entries (the "Logs" and "Database" tabs in Subnautica 2),
+plus **Item Descriptions** (every item's in-game name + description text,
+grouped by the same fabricator/builder/processor tabs the game uses).
 
 All content is extracted from the game's local files. No game files are
 redistributed — only the structured text data the player sees in-game.
@@ -64,22 +66,27 @@ script reads them via the `-FModelContent` / `-GameRoot` arguments.
 1. **Re-export entry text** in FModel. For complete coverage (including
    dev/WIP prototype entries), right-click `Subnautica2/Content` →
    *Save Folder's Packages Properties (.json)*. The build script walks
-   the whole Content tree looking for any object with
-   `Type == "UWEDatabankEntry"`, so anything outside
-   `Data/DatabankEntry` (e.g. `Prototyping/Void/Data/DatabankEntries`,
-   `Data/Narrative/DatabankEntries`) gets picked up automatically and
-   grouped under a separate **Prototypes** root in the tree.
+   the whole Content tree looking for objects with
+   `Type == "UWEDatabankEntry"` (databank pages) and
+   `Type == "UWEItemType"` (item descriptions), plus reading
+   `Data/CraftingRecipes/` to assemble the fabricator/builder tab
+   structure for the Item Descriptions tree. Anything outside
+   `Data/DatabankEntry` or `Data/ItemType` is picked up automatically
+   and grouped under a separate **Prototypes** root.
    If you only want released content, exporting just
-   `Subnautica2/Content/Data/DatabankEntry` still works.
+   `Subnautica2/Content/Data/DatabankEntry`,
+   `Subnautica2/Content/Data/ItemType`, and
+   `Subnautica2/Content/Data/CraftingRecipes` still works.
 
-2. **Re-export entry textures** in FModel — three folders cover ~99% of
+2. **Re-export entry textures** in FModel — these folders cover ~99% of
    referenced images:
 
    | Right-click in FModel | What it gives you |
    |---|---|
    | `Subnautica2/Content/UI/` → *Save Folder's Packages Textures* | UI icons, placeholders, Alterra logo |
-   | `Subnautica2/Content/Utility/Editor/IconBaker/` → same | Per-creature scan icons (the real art) |
+   | `Subnautica2/Content/Utility/Editor/IconBaker/` → same | Per-creature scan icons + item thumbnails (the real art) |
    | `Subnautica2/Content/Prototyping/Void/Textures/` → same | Axum / alien glyph placeholders |
+   | `Subnautica2/Content/Blueprints/UI/Fabricator/Icons/` → same | Tadpole upgrade module icons (used by item descriptions) |
 
 3. **Run the build script** (see [Cheat sheet](#cheat-sheet)). It reads the
    entry JSONs and copies only the referenced textures into `docs/images/`.
@@ -105,16 +112,24 @@ That's the full loop. New logs, renamed entries, new art — all flow through.
 - **ID collisions.** When two entries share an asset name (e.g. the two
   `Singh` investigations), the script appends the parent folder to the ID so
   they remain individually addressable.
-- **Prototypes root.** Any `UWEDatabankEntry` found outside
-  `Data/DatabankEntry` gets a synthetic root category prepended:
+- **Prototypes root.** Any `UWEDatabankEntry` or `UWEItemType` found
+  outside its respective `Data/DatabankEntry` / `Data/ItemType` root
+  gets a synthetic top-level category prepended:
   `Prototypes (DEV/WIP Content - not ingame)`. So dev/test entries are
   visible but segregated from the released tree.
-- **Uncategorized root.** Released entries with an empty `Categories[]`
-  array (some `[PLACEHOLDER]` entries don't have categories set yet)
-  land under a synthetic `Uncategorized` root rather than rendering as
-  bare leaves at the top of the tree.
-- **Images.** `EntryImage.AssetPathName` is translated to a relative PNG
-  path under `docs/images/`. The build script copies only the images
+- **Uncategorized root.** Released databank entries with an empty
+  `Categories[]` array (some `[PLACEHOLDER]` entries don't have
+  categories set yet) land under a synthetic `Uncategorized` root
+  rather than rendering as bare leaves at the top of the tree.
+- **Item Descriptions root.** Every `UWEItemType` is filed under
+  `Item Descriptions`. When the item is the output of a recipe in
+  `Data/CraftingRecipes/`, its recipe Category chain becomes the
+  sub-tree (e.g. `Fabricator / Sustenance / Cooked Food`). Otherwise
+  (raw resources, creatures, deprecated items), the source subfolder
+  under `Data/ItemType/` becomes the bucket.
+- **Images.** `EntryImage.AssetPathName` (databank) and
+  `Thumbnail.AssetPathName` (items) are both translated to relative PNG
+  paths under `docs/images/`. The build script copies only the images
   referenced by some entry — the rest of the FModel export tree is left
   alone. Entries whose referenced image isn't on disk render text-only.
 
