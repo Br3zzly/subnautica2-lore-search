@@ -133,8 +133,13 @@
         let candidates;
         if (words.length) {
             const hits = mini.search(words.join(' '), {
-                prefix: true,
-                fuzzy: 0.2,
+                // Prefix match needs at least 2 chars to be useful.
+                prefix: term => term.length >= 2,
+                // Fuzzy is meaningless for very short terms — fuzzy: 0.2 on a
+                // 3-letter query yields edit-distance 1, so "asd" matches
+                // "and", "ask", "add", ... and explodes the result set. Only
+                // enable fuzzy once we have enough letters to constrain it.
+                fuzzy: term => term.length >= 4 ? 0.2 : false,
             });
             candidates = new Set(hits.map(h => h.id));
         } else {
