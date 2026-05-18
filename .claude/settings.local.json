@@ -6,7 +6,20 @@
       "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"scripts/build_data.ps1\" -FModelContent \"C:/Users/Lukas Lustenberger/Documents/Gamehacking/FModel/Output/Exports/Subnautica2/Content/\")",
       "PowerShell(& \"$pwd\\\\scripts\\\\build_data.ps1\" -FModelContent \"C:\\\\Users\\\\Lukas Lustenberger\\\\Documents\\\\Gamehacking\\\\FModel\\\\Output\\\\Exports\\\\Subnautica2\\\\Content\")",
       "PowerShell(& \"c:\\\\Users\\\\Lukas Lustenberger\\\\Documents\\\\Coding\\\\Github_Repos\\\\subnautica2-lore-search\\\\scripts\\\\build_data.ps1\" -FModelContent \"C:\\\\Users\\\\Lukas Lustenberger\\\\Documents\\\\Gamehacking\\\\FModel\\\\Output\\\\Exports\\\\Subnautica2\\\\Content\")",
-      "Bash(powershell -NoProfile -Command \"Get-Content 'C:\\\\Users\\\\Lukas Lustenberger\\\\Documents\\\\Gamehacking\\\\FModel\\\\Output\\\\Exports\\\\Subnautica2\\\\Content\\\\StringTables\\\\NarrativeStrings\\\\Ch2\\\\ST_POI_Ch2_Nahema3.json' -Raw\")"
+      "Bash(powershell -NoProfile -Command \"Get-Content 'C:\\\\Users\\\\Lukas Lustenberger\\\\Documents\\\\Gamehacking\\\\FModel\\\\Output\\\\Exports\\\\Subnautica2\\\\Content\\\\StringTables\\\\NarrativeStrings\\\\Ch2\\\\ST_POI_Ch2_Nahema3.json' -Raw\")",
+      "Bash(cp \"c:/Users/Lukas Lustenberger/Downloads/subnautica2_timeline.md\" \"c:/Users/Lukas Lustenberger/Documents/Coding/Github_Repos/subnautica2-lore-search/docs/timeline.md\")",
+      "Bash(python -m http.server 8765 --directory docs)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8765/timeline.html)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8765/timeline.md)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8765/timeline.js)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8765/style.css)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8765/index.html)",
+      "Bash(curl -s http://localhost:8765/timeline.md)",
+      "PowerShell(Start-Process \"http://localhost:8765/timeline.html\")",
+      "Bash(curl -s http://localhost:8765/index.html)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\Lukas Lustenberger\\Downloads"
     ]
   }
 }
