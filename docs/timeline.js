@@ -3,17 +3,18 @@
 
     const article = document.getElementById('timeline-content');
 
-    // Citation IDs in the markdown look like `DA_Foo_Bar`. After marked.js
-    // renders inline backticks to <code>…</code>, we rewrite every code span
-    // whose text matches a databank-entry ID into a deep-link back to
-    // index.html#<id>. The hash handler in app.js will then auto-expand the
-    // ancestor categories and scroll to the entry.
+    // Citation IDs in the markdown look like `DA_Foo` or `DA_Foo_Bar_Baz`.
+    // After marked.js renders inline backticks to <code>…</code>, we rewrite
+    // every code span whose text matches a databank-entry ID into a deep-link
+    // back to index.html#<id>. The hash handler in app.js then auto-expands
+    // the ancestor categories and scrolls to the entry.
     //
-    // The pattern requires at least one underscore after the `DA_` prefix so
-    // we don't link bare `DA_` fragments (e.g. inside `DA_*_AxumLogogram`
-    // which marked leaves intact inside a code span — the asterisk breaks
-    // the pattern and the whole token is correctly skipped).
-    const ID_RE = /^DA_[A-Za-z0-9]+(?:_[A-Za-z0-9]+)+$/;
+    // We allow any [A-Za-z0-9_]+ tail after `DA_`, which covers both
+    // single-segment IDs (`DA_Alterra`, `DA_Kharaa`) and multi-segment ones
+    // (`DA_CoralGardens_BlackBox_Chap_02_DatabankEntry`). Patterns containing
+    // other characters (`DA_*_AxumLogogram`) correctly fail to match because
+    // the `*` is outside the allowed set.
+    const ID_RE = /^DA_[A-Za-z0-9_]+$/;
 
     function linkifyCitations(root) {
         const codes = root.querySelectorAll('code');
